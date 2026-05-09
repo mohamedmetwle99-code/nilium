@@ -74,8 +74,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'story.stat2.label': 'Hours Burn Time',
     'story.stat3.num': '0',
     'story.stat3.label': 'Synthetic Additives',
-    'story.stat4.num': '3',
-    'story.stat4.label': 'Cotton Wicks',
+    'story.stat4.num': '1',
+    'story.stat4.label': 'Wood Wick',
 
     'howto.label': 'The NILIUM Ritual',
     'howto.title': 'How It Works',
@@ -224,8 +224,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'story.stat2.label': 'Stunden Brennzeit',
     'story.stat3.num': '0',
     'story.stat3.label': 'Synthetische Zusätze',
-    'story.stat4.num': '3',
-    'story.stat4.label': 'Baumwolldochte',
+    'story.stat4.num': '1',
+    'story.stat4.label': 'Holz Docht',
 
     'howto.label': 'Das NILIUM-Ritual',
     'howto.title': 'Anleitung',
