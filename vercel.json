@@ -1,0 +1,22 @@
+{
+  "version": 3,
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "dest": "/index.html"
+    }
+  ]
+}</content>
+<parameter name="filePath">c:\Users\Metwaky\Downloads\nilium-brand-development-plan (1)\vercel.json
