@@ -63,7 +63,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.8 }}
-          className="text-7xl md:text-9xl lg:text-[8rem] hero-title text-cream mb-3 leading-none"
+          className="text-7xl md:text-9xl lg:text-[8rem] hero-title text-cream pl-4 md:pl-6 mb-3 leading-none"
         >
           <span className="gold-shimmer">{t['hero.title']}</span>
         </motion.h1>
