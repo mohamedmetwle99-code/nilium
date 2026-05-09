@@ -23,7 +23,7 @@
 
 .hero-title {
   font-family: var(--font-display);
-  font-style: italic;
+  font-style: normal;
   font-weight: 300;
   letter-spacing: 0.28em;
   font-variant-ligatures: discretionary-ligatures;
