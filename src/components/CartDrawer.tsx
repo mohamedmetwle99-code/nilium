@@ -17,7 +17,7 @@ interface Props {
   currency: Currency;
 }
 
-export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice }) => {
+export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice, currency }) => {
   const t = translations[lang];
   const [loading, setLoading] = useState(false);
 
@@ -26,11 +26,14 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
   const handleCheckout = async () => {
     console.log('Checkout button clicked');
     console.log('Items:', items);
-    console.log('Currency:', currency);
+    console.log('Currency:', currency || 'CHF (default)');
     console.log('Stripe publishable key exists:', !!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+    console.log('Stripe key value:', import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ? 'Set' : 'Not set');
 
-    if (!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY) {
+    const stripeKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
+    if (!stripeKey || stripeKey.trim() === '') {
       alert('Stripe is not configured. Please check your environment variables.');
+      console.error('VITE_STRIPE_PUBLISHABLE_KEY is not set or empty');
       return;
     }
 
@@ -49,10 +52,10 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
           items: items.map((item) => ({
             name: item.name,
             quantity: item.qty,
-            price: currency === 'EUR'
+            price: (currency || 'CHF') === 'EUR'
               ? Number((item.price * 0.94).toFixed(2))
               : item.price,
-            currency: currency.toLowerCase(),
+            currency: (currency || 'CHF').toLowerCase(),
             description: item.variant,
           })),
         }),
