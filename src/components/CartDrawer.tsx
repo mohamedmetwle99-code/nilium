@@ -24,8 +24,24 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
   const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '');
 
   const handleCheckout = async () => {
+    console.log('Checkout button clicked');
+    console.log('Items:', items);
+    console.log('Currency:', currency);
+    console.log('Stripe publishable key exists:', !!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
+
+    if (!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY) {
+      alert('Stripe is not configured. Please check your environment variables.');
+      return;
+    }
+
+    if (items.length === 0) {
+      alert('Your cart is empty');
+      return;
+    }
+
     setLoading(true);
     try {
+      console.log('Sending checkout request...');
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -42,24 +58,37 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
         }),
       });
 
+      console.log('Response status:', response.status);
       if (!response.ok) {
         const errorData = await response.json();
+        console.error('Response error data:', errorData);
         throw new Error(errorData?.error || 'Checkout failed');
       }
 
-      const { id } = await response.json();
+      const data = await response.json();
+      console.log('Response data:', data);
+      const { id } = data;
+
+      if (!id) {
+        throw new Error('No session ID received from server');
+      }
+
+      console.log('Loading Stripe...');
       const stripe = await stripePromise;
 
       if (!stripe) {
         throw new Error('Stripe failed to load. Please check your publishable key.');
       }
 
+      console.log('Redirecting to checkout...');
       const result = await stripe.redirectToCheckout({ sessionId: id });
       if (result.error) {
+        console.error('Stripe redirect error:', result.error);
         throw result.error;
       }
     } catch (error: any) {
       console.error('Checkout error:', error);
+      alert(`Checkout failed: ${error.message}`);
       setLoading(false);
     }
   };
