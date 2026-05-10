@@ -16,14 +16,35 @@ interface Props {
   currency: Currency;
 }
 
-export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice }) => {
+export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice, currency }) => {
   const t = translations[lang];
+
+  const handleCheckout = async () => {
+    try {
+      const response = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: items.map(i => ({
+            name: i.name,
+            price: i.price,
+            quantity: i.qty,
+            currency: (currency || 'CHF').toLowerCase()
+          }))
+        })
+      });
+      const data = await response.json();
+      if (data.url) window.location.href = data.url;
+      else alert('Checkout failed: ' + (data.error || 'Unknown error'));
+    } catch(e) {
+      alert('Checkout error: ' + e);
+    }
+  };
 
   return (
     <AnimatePresence>
       {open && (
         <>
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -31,7 +52,6 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
             onClick={onClose}
             className="fixed inset-0 z-50 bg-black/50 backdrop-blur-sm"
           />
-          {/* Drawer */}
           <motion.div
             initial={{ x: '100%' }}
             animate={{ x: 0 }}
@@ -39,7 +59,6 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
             transition={{ type: 'spring', damping: 30, stiffness: 300 }}
             className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-ivory shadow-2xl flex flex-col"
           >
-            {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-cream-dark">
               <h2 className="font-display text-xl text-charcoal">{t['cart.title']}</h2>
               <button onClick={onClose} className="text-charcoal/50 hover:text-charcoal transition-colors">
@@ -47,7 +66,6 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
               </button>
             </div>
 
-            {/* Items */}
             <div className="flex-1 overflow-y-auto p-6">
               {items.length === 0 ? (
                 <div className="flex flex-col items-center justify-center h-full text-charcoal/30">
@@ -67,9 +85,7 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                           {item.variant}
                         </p>
                         <div className="flex items-center justify-between mt-2">
-                          <div className="flex items-center gap-2">
-                            <span className="text-xs text-charcoal/50 font-accent">×{item.qty}</span>
-                          </div>
+                          <span className="text-xs text-charcoal/50 font-accent">×{item.qty}</span>
                           <span className="text-sm font-accent text-charcoal">{formatPrice(item.price * item.qty)}</span>
                         </div>
                         <button
@@ -85,14 +101,16 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
               )}
             </div>
 
-            {/* Footer */}
             {items.length > 0 && (
               <div className="p-6 border-t border-cream-dark space-y-4">
                 <div className="flex justify-between items-center">
                   <span className="font-accent text-sm text-charcoal/60">{t['cart.subtotal']}</span>
                   <span className="font-display text-xl text-charcoal">{formatPrice(subtotal)}</span>
                 </div>
-                <button className="w-full bg-nile text-cream py-4 font-accent text-xs tracking-[0.2em] uppercase hover:bg-nile-light transition-colors">
+                <button
+                  onClick={handleCheckout}
+                  className="w-full bg-nile text-cream py-4 font-accent text-xs tracking-[0.2em] uppercase hover:bg-nile-light transition-colors"
+                >
                   {t['cart.checkout']}
                 </button>
                 <p className="text-center text-[10px] text-charcoal/30 font-body">
