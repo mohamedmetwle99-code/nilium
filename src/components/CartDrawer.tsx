@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { loadStripe } from '@stripe/stripe-js';
+import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingBag } from 'lucide-react';
 import type { Language } from '../i18n';
@@ -17,84 +16,8 @@ interface Props {
   currency: Currency;
 }
 
-export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice, currency }) => {
+export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice }) => {
   const t = translations[lang];
-  const [loading, setLoading] = useState(false);
-
-  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '');
-
-  const handleCheckout = async () => {
-    console.log('Checkout button clicked');
-    console.log('Items:', items);
-    console.log('Currency:', currency || 'CHF (default)');
-    console.log('Stripe publishable key exists:', !!import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
-    console.log('Stripe key value:', import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY ? 'Set' : 'Not set');
-
-    const stripeKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
-    if (!stripeKey || stripeKey.trim() === '') {
-      alert('Stripe is not configured. Please check your environment variables.');
-      console.error('VITE_STRIPE_PUBLISHABLE_KEY is not set or empty');
-      return;
-    }
-
-    if (items.length === 0) {
-      alert('Your cart is empty');
-      return;
-    }
-
-    setLoading(true);
-    try {
-      console.log('Sending checkout request...');
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          items: items.map((item) => ({
-            name: item.name,
-            quantity: item.qty,
-            price: (currency || 'CHF') === 'EUR'
-              ? Number((item.price * 0.94).toFixed(2))
-              : item.price,
-            currency: (currency || 'CHF').toLowerCase(),
-            description: item.variant,
-          })),
-        }),
-      });
-
-      console.log('Response status:', response.status);
-      if (!response.ok) {
-        const errorData = await response.json();
-        console.error('Response error data:', errorData);
-        throw new Error(errorData?.error || 'Checkout failed');
-      }
-
-      const data = await response.json();
-      console.log('Response data:', data);
-      const { id } = data;
-
-      if (!id) {
-        throw new Error('No session ID received from server');
-      }
-
-      console.log('Loading Stripe...');
-      const stripe = await stripePromise;
-
-      if (!stripe) {
-        throw new Error('Stripe failed to load. Please check your publishable key.');
-      }
-
-      console.log('Redirecting to checkout...');
-      const result = await stripe.redirectToCheckout({ sessionId: id });
-      if (result.error) {
-        console.error('Stripe redirect error:', result.error);
-        throw result.error;
-      }
-    } catch (error: any) {
-      console.error('Checkout error:', error);
-      alert(`Checkout failed: ${error.message}`);
-      setLoading(false);
-    }
-  };
 
   return (
     <AnimatePresence>
@@ -169,12 +92,8 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                   <span className="font-accent text-sm text-charcoal/60">{t['cart.subtotal']}</span>
                   <span className="font-display text-xl text-charcoal">{formatPrice(subtotal)}</span>
                 </div>
-                <button 
-                  onClick={handleCheckout} 
-                  disabled={loading}
-                  className="w-full bg-nile text-cream py-4 font-accent text-xs tracking-[0.2em] uppercase hover:bg-nile-light transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  {loading ? t['cart.processing'] || 'Processing...' : t['cart.checkout']}
+                <button className="w-full bg-nile text-cream py-4 font-accent text-xs tracking-[0.2em] uppercase hover:bg-nile-light transition-colors">
+                  {t['cart.checkout']}
                 </button>
                 <p className="text-center text-[10px] text-charcoal/30 font-body">
                   PostFinance · TWINT · Visa · Mastercard · PayPal

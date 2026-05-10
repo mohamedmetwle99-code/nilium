@@ -16,19 +16,9 @@
   --color-success: #2E7D32;
 
   /* TRD Typography */
-  --font-display: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-display: 'Playfair Display', Georgia, serif;
   --font-accent: 'Montserrat', system-ui, sans-serif;
   --font-body: 'Lato', system-ui, sans-serif;
-}
-
-.hero-title {
-  font-family: var(--font-display);
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 0.28em;
-  font-variant-ligatures: discretionary-ligatures;
-  font-feature-settings: "swsh" 1, "liga" 1;
-  text-transform: uppercase;
 }
 
 html {
