@@ -5,6 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NILIUM — Quiet Luxury Fragrances | Swiss-Crafted, Nile-Inspired</title>
     <meta name="description" content="NILIUM — Premium home fragrances blending ancient Nile heritage with Swiss Alpine purity. 100% natural soy wax candles and scented sachets. Quiet luxury, deeply felt." />
+    <meta property="og:title" content="NILIUM — Quiet Luxury Fragrances | Swiss-Crafted, Nile-Inspired" />
+    <meta property="og:description" content="NILIUM — Premium home fragrances blending ancient Nile heritage with Swiss Alpine purity." />
+    <meta property="og:image" content="https://nilium-app-2026-seven.vercel.app/images/hero-bg.jpg" />
+    <meta property="og:url" content="https://nilium-app-2026-seven.vercel.app" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Brand",
+        "name": "NILIUM",
+        "description": "Premium home fragrances blending ancient Nile heritage with Swiss Alpine purity.",
+        "url": "https://nilium-app-2026-seven.vercel.app",
+        "logo": "https://nilium-app-2026-seven.vercel.app/images/hero-bg.jpg"
+      }
+    </script>
+    <script>
+      const GA_ID = import.meta.env.VITE_GA_ID;
+      if (GA_ID) {
+        const gtagScript = document.createElement('script');
+        gtagScript.async = true;
+        gtagScript.src = `https://www.googletagmanager.com/gtag/js?id=${GA_ID}`;
+        document.head.appendChild(gtagScript);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){window.dataLayer.push(arguments);}
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', GA_ID);
+      }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@200;300;400;500;600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">

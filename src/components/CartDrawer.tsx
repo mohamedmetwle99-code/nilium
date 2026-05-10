@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ShoppingBag } from 'lucide-react';
 import type { Language } from '../i18n';
@@ -20,16 +21,44 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
   const t = translations[lang];
   const [loading, setLoading] = useState(false);
 
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY || '');
+
   const handleCheckout = async () => {
     setLoading(true);
     try {
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          items: items.map((item) => ({
+            name: item.name,
+            quantity: item.qty,
+            price: currency === 'EUR'
+              ? Number((item.price * 0.94).toFixed(2))
+              : item.price,
+            currency: currency.toLowerCase(),
+            description: item.variant,
+          })),
+        }),
       });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData?.error || 'Checkout failed');
+      }
+
       const { id } = await response.json();
-      window.location.href = `https://checkout.stripe.com/c/pay/${id}`;
-    } catch (error) {
+      const stripe = await stripePromise;
+
+      if (!stripe) {
+        throw new Error('Stripe failed to load. Please check your publishable key.');
+      }
+
+      const result = await stripe.redirectToCheckout({ sessionId: id });
+      if (result.error) {
+        throw result.error;
+      }
+    } catch (error: any) {
       console.error('Checkout error:', error);
       setLoading(false);
     }

@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState, useCallback, useEffect } from 'react';
 import type { Language } from './i18n';
 import { useCart } from './store';
 import { Navigation } from './components/Navigation';
@@ -12,16 +12,33 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
 import { CookieBanner } from './components/CookieBanner';
+import { Success } from './pages/Success';
+import { Cancel } from './pages/Cancel';
 
 const App: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
   const [cartOpen, setCartOpen] = useState(false);
+  const [route, setRoute] = useState(window.location.pathname);
   const { items, addItem, removeItem, totalItems, subtotal, currency, setCurrency, formatPrice } = useCart();
+
+  useEffect(() => {
+    const handlePopState = () => setRoute(window.location.pathname);
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const handleNavigate = useCallback((href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, []);
+
+  if (route === '/success') {
+    return <Success />;
+  }
+
+  if (route === '/cancel') {
+    return <Cancel />;
+  }
 
   return (
     <div className="min-h-screen">
