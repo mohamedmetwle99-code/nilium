@@ -24,10 +24,6 @@ interface Product {
 const products: Product[] = [
   { id: 'nile', key: 'nile', image: '/images/candle-nile.jpg', collection: 'nile' },
   { id: 'alpine', key: 'alpine', image: '/images/candle-alpine.jpg', collection: 'alpine' },
-  { id: 'lotus', key: 'lotus', image: '/images/candle-lotus.jpg', collection: 'gift' },
-  { id: 'gift-nile', key: 'nile', image: '/images/gift-box.jpg', collection: 'gift' },
-  { id: 'sachet-alpine', key: 'alpine', image: '/images/sachet.jpg', collection: 'alpine' },
-  { id: 'sachet-lotus', key: 'lotus', image: '/images/ingredients.jpg', collection: 'nile' },
 ];
 
 const ProductCard: React.FC<{
@@ -75,11 +71,6 @@ const ProductCard: React.FC<{
         {product.id === 'nile' && (
           <div className="absolute top-3 right-3 bg-solar text-nile-dark text-[9px] font-accent font-semibold tracking-wider uppercase px-3 py-1">
             Bestseller
-          </div>
-        )}
-        {product.id === 'lotus' && (
-          <div className="absolute top-3 right-3 bg-nile text-cream text-[9px] font-accent font-semibold tracking-wider uppercase px-3 py-1">
-            New
           </div>
         )}
       </div>
@@ -168,7 +159,6 @@ export const ShopSection: React.FC<Props> = ({ lang, formatPrice, onAddToCart })
     { key: 'all', label: 'All' },
     { key: 'nile', label: t['collections.nile'] },
     { key: 'alpine', label: t['collections.alpine'] },
-    { key: 'gift', label: t['collections.gift'] },
   ];
 
   const filtered = filter === 'all' ? products : products.filter(p => p.collection === filter);
