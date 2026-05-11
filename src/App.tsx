@@ -4,7 +4,6 @@ import type { CartItem } from './store';
 import { useCart } from './store';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
-import { BrandValuesStrip } from './components/BrandValuesStrip';
 import { ShopSection } from './components/ShopSection';
 import { StorySection } from './components/StorySection';
 import { PackagingSection } from './components/PackagingSection';
@@ -47,7 +46,6 @@ const AppInner: React.FC = () => {
       />
 
       <HeroSection lang={lang} />
-      <BrandValuesStrip lang={lang} />
       <ShopSection lang={lang} formatPrice={formatPrice} onAddToCart={handleAddToCart} />
       <StorySection lang={lang} />
       <PackagingSection lang={lang} />
