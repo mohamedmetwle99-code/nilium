@@ -114,7 +114,7 @@ const ProductCard: React.FC<{
               price,
               image: product.image,
             })}
-            className="flex items-center gap-2 bg-nilium-gold text-nilium-navy text-[10px] font-accent font-bold tracking-[0.15em] uppercase px-4 py-2.5 hover:bg-nilium-gold/90 transition-colors rounded-none"
+            className="flex items-center gap-2 bg-nile text-cream text-[10px] font-accent tracking-[0.15em] uppercase px-4 py-2.5 hover:bg-nile-light transition-colors"
           >
             <ShoppingBag size={12} />
             {t['product.addToCart']}
@@ -206,7 +206,7 @@ export const ShopSection: React.FC<Props> = ({ lang, formatPrice, onAddToCart })
           ))}
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((product, i) => (
             <ProductCard
               key={product.id}
