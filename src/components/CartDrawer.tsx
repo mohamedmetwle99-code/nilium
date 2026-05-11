@@ -33,7 +33,14 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
           }))
         })
       });
-      const data = await response.json();
+      const text = await response.text();
+      let data: any;
+      try {
+        data = JSON.parse(text);
+      } catch {
+        alert('Checkout error: server returned an unexpected response. Please try again.');
+        return;
+      }
       if (data.url) window.location.href = data.url;
       else alert('Checkout failed: ' + (data.error || 'Unknown error'));
     } catch(e) {

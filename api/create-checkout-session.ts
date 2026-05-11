@@ -1,12 +1,17 @@
 ﻿import Stripe from 'stripe';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2023-10-16' });
-
 export default async function handler(req: any, res: any) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
-    return res.status(405).end('Method Not Allowed');
+    return res.status(405).json({ error: 'Method Not Allowed' });
   }
+
+  const stripeKey = process.env.STRIPE_SECRET_KEY;
+  if (!stripeKey) {
+    return res.status(500).json({ error: 'Stripe is not configured' });
+  }
+
+  const stripe = new Stripe(stripeKey, { apiVersion: '2023-10-16' });
 
   try {
     const { items } = req.body;
@@ -46,7 +51,7 @@ export default async function handler(req: any, res: any) {
       cancel_url: `${baseUrl}/cancel`,
     });
 
-    res.status(200).json({ id: session.id });
+    res.status(200).json({ url: session.url, id: session.id });
   } catch (err: any) {
     console.error('Stripe checkout error:', err);
     res.status(500).json({ error: err.message || 'Unable to create checkout session' });
