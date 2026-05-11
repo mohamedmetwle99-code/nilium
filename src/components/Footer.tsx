@@ -1,5 +1,6 @@
-import React from 'react';
-import { SolarSeal, LotusMark } from './NiliumLogo';
+import React, { useState } from 'react';
+import { LotusMark } from './NiliumLogo';
+import { useToast } from './Toast';
 import type { Language } from '../i18n';
 import { translations } from '../i18n';
 
@@ -7,107 +8,154 @@ interface Props { lang: Language; }
 
 export const Footer: React.FC<Props> = ({ lang }) => {
   const t = translations[lang];
+  const { showToast } = useToast();
+  const [email, setEmail] = useState('');
 
-  const shopLinks = [
-    t['collections.nile'],
-    t['collections.alpine'],
-    t['collections.gift'],
+  const handleNewsletterSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!email) return;
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+      const data = await res.json();
+      if (res.ok) {
+        showToast(t['newsletter.cta']);
+        setEmail('');
+      } else {
+        showToast(data.error || 'Subscription failed');
+      }
+    } catch {
+      showToast('Network error. Please try again.');
+    }
+  };
+
+  const navigateLinks = [
+    { label: t['nav.home'],           href: '#home' },
+    { label: t['footer.collections'], href: '#shop' },
+    { label: t['nav.story'],          href: '#story' },
+    { label: t['nav.contact'],        href: '#contact' },
   ];
 
-  const companyLinks = [
-    { label: t['nav.story'], href: '#story' },
-    { label: t['nav.howItWorks'], href: '#howto' },
-    { label: t['nav.contact'], href: '#contact' },
+  // TODO: Replace '#' placeholders with real page/modal targets when ready
+  const supportLinks = [
+    { label: t['footer.shipping'],  href: '#' },
+    { label: t['footer.careGuide'], href: '#' },
+    { label: t['footer.faq'],       href: '#' },
+    { label: t['footer.privacy'],   href: '#' },
+    { label: t['footer.terms'],     href: '#' },
   ];
 
-  const legalLinks = [
-    t['footer.privacy'],
-    t['footer.terms'],
-    t['footer.imprint'],
-    t['footer.shipping'],
-    t['footer.gdpr'],
+  const socials = [
+    { abbr: 'IG', label: 'Instagram' },
+    { abbr: 'PT', label: 'Pinterest' },
+    { abbr: 'TT', label: 'TikTok' },
   ];
 
   return (
-    <footer className="bg-nile-dark border-t border-cream/5 pt-16 pb-8 relative overflow-hidden">
-      {/* Decorative background lotus */}
-      <div className="absolute -bottom-20 left-1/2 -translate-x-1/2 text-solar/[0.03] pointer-events-none">
-        <LotusMark size={500} strokeWidth={0.8} />
-      </div>
+    <footer className="bg-nilium-navy pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-5">
 
-      <div className="max-w-6xl mx-auto px-5 relative">
-        {/* Top brand seal centered */}
-        <div className="flex flex-col items-center mb-12 pb-12 border-b border-cream/5">
-          <SolarSeal size={90} variant="navy" className="mb-5" />
-          <p className="font-display text-cream/70 text-2xl tracking-[0.3em] font-medium mb-2">NILIUM</p>
-          <div className="w-20 h-px bg-solar/40 mb-3" />
-          <p className="text-solar/60 text-[10px] tracking-[0.4em] uppercase font-accent mb-2">
-            {t['footer.tagline']}
-          </p>
-          <p className="text-cream/25 text-[10px] tracking-[0.4em] uppercase font-accent">
-            {t['footer.est']}
-          </p>
-        </div>
+        {/* 4-column grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
 
-        {/* Link columns */}
-        <div className="grid md:grid-cols-4 gap-10 mb-12">
-          {/* Tagline column */}
-          <div className="md:col-span-1">
-            <p className="font-display italic text-cream/30 text-sm leading-relaxed">
-              {t['footer.taglineSecondary']}
+          {/* Column 1 — Brand */}
+          <div>
+            <div className="flex items-center gap-2.5 mb-4">
+              <LotusMark size={26} strokeWidth={1.4} className="text-nilium-gold" />
+              <span className="font-display tracking-[0.25em] text-white text-base font-medium">NILIUM</span>
+            </div>
+            <p className="text-white/50 text-sm font-body leading-relaxed mb-5">
+              {t['footer.taglineBrand']}
             </p>
-            <div className="mt-5 flex items-center gap-2">
-              <span className="text-cream/30 text-[10px] tracking-[0.2em] uppercase font-accent">Follow:</span>
-              {['IG', 'TT', 'PIN'].map((s) => (
-                <a key={s} href="#" className="w-7 h-7 rounded-full border border-cream/10 hover:border-solar/40 flex items-center justify-center text-cream/30 hover:text-solar text-[9px] font-accent transition-colors">
-                  {s}
+            <div className="flex items-center gap-2">
+              <span className="text-white/30 text-[10px] font-accent tracking-wider uppercase mr-1">
+                {t['footer.social']}
+              </span>
+              {socials.map(s => (
+                <a
+                  key={s.abbr}
+                  href="#"
+                  aria-label={s.label}
+                  className="w-8 h-8 border border-white/15 hover:border-nilium-gold/60 hover:text-nilium-gold flex items-center justify-center text-white/35 text-[9px] font-accent font-bold transition-colors"
+                >
+                  {s.abbr}
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Shop */}
+          {/* Column 2 — Navigate */}
           <div>
-            <h4 className="text-[10px] tracking-[0.25em] uppercase font-accent text-solar/40 mb-4">{t['footer.shop']}</h4>
-            <ul className="space-y-2.5">
-              {shopLinks.map((link, i) => (
-                <li key={i}>
-                  <a href="#shop" className="text-cream/25 hover:text-cream/55 text-xs font-body transition-colors">{link}</a>
+            <h4 className="text-nilium-gold text-[10px] font-accent font-bold tracking-[0.25em] uppercase mb-5">
+              {t['footer.navigate']}
+            </h4>
+            <ul className="space-y-3">
+              {navigateLinks.map(link => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Company */}
+          {/* Column 3 — Support */}
           <div>
-            <h4 className="text-[10px] tracking-[0.25em] uppercase font-accent text-solar/40 mb-4">{t['footer.company']}</h4>
-            <ul className="space-y-2.5">
-              {companyLinks.map((link, i) => (
-                <li key={i}>
-                  <a href={link.href} className="text-cream/25 hover:text-cream/55 text-xs font-body transition-colors">{link.label}</a>
+            <h4 className="text-nilium-gold text-[10px] font-accent font-bold tracking-[0.25em] uppercase mb-5">
+              {t['footer.support']}
+            </h4>
+            <ul className="space-y-3">
+              {/* TODO: Replace '#' with real targets when pages/modals are ready */}
+              {supportLinks.map(link => (
+                <li key={link.label}>
+                  <a
+                    href={link.href}
+                    className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors"
+                  >
+                    {link.label}
+                  </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Legal */}
+          {/* Column 4 — Newsletter */}
           <div>
-            <h4 className="text-[10px] tracking-[0.25em] uppercase font-accent text-solar/40 mb-4">{t['footer.legal']}</h4>
-            <ul className="space-y-2.5">
-              {legalLinks.map((link, i) => (
-                <li key={i}>
-                  <a href="#" className="text-cream/25 hover:text-cream/55 text-xs font-body transition-colors">{link}</a>
-                </li>
-              ))}
-            </ul>
+            <h4 className="text-nilium-gold text-[10px] font-accent font-bold tracking-[0.25em] uppercase mb-5">
+              {t['footer.newsletter']}
+            </h4>
+            <p className="text-white/50 text-sm font-body mb-4">
+              {t['footer.newsletterTitle']}
+            </p>
+            <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
+              <input
+                type="email"
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+                placeholder={t['footer.newsletterPlaceholder']}
+                className="bg-transparent border border-white/15 px-4 py-2.5 text-sm font-body text-white placeholder-white/25 focus:outline-none focus:border-nilium-gold/50 transition-colors"
+              />
+              <button
+                type="submit"
+                className="border border-nilium-gold/60 text-nilium-gold text-[11px] font-accent font-bold tracking-[0.12em] uppercase px-4 py-2.5 hover:bg-nilium-gold/10 transition-colors"
+              >
+                {t['footer.newsletterSubmit']}
+              </button>
+            </form>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div className="border-t border-cream/5 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-cream/15 text-[10px] tracking-[0.15em] font-accent">{t['footer.rights']}</p>
-          <p className="text-cream/15 text-[10px] tracking-[0.15em] font-accent flex items-center gap-1.5">
-            <span>🇨🇭</span> {t['footer.swiss']}
+        {/* Bottom bar — thin gold divider */}
+        <div className="border-t border-nilium-gold/20 pt-6 text-center">
+          <p className="text-white/30 text-xs font-body tracking-wide">
+            {t['footer.rights']}
           </p>
         </div>
       </div>

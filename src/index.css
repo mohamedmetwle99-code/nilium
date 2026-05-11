@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  /* TRD Color Palette */
+  /* Original palette — preserved */
   --color-nile: #002344;
   --color-nile-light: #0A3560;
   --color-nile-dark: #001528;
@@ -15,10 +15,31 @@
   --color-kraft: #B8956A;
   --color-success: #2E7D32;
 
-  /* TRD Typography */
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-accent: 'Montserrat', system-ui, sans-serif;
-  --font-body: 'Lato', system-ui, sans-serif;
+  /* Brand design tokens */
+  --color-nilium-navy: #0D1B3E;
+  --color-nilium-gold: #B8952A;
+  --color-nilium-cream: #FAF7F0;
+  --color-nilium-white: #FFFFFF;
+  --color-nilium-charcoal: #1A1A1A;
+  --color-nilium-gold-light: #F5EDD6;
+  --color-nilium-navy-light: #EEF1F8;
+  --color-nilium-muted: #888888;
+
+  /* Typography — system fonts, zero load cost */
+  --font-display: Georgia, serif;
+  --font-accent: Arial, system-ui, sans-serif;
+  --font-body: Arial, system-ui, sans-serif;
+}
+
+:root {
+  --nilium-navy: #0D1B3E;
+  --nilium-gold: #B8952A;
+  --nilium-cream: #FAF7F0;
+  --nilium-white: #FFFFFF;
+  --nilium-charcoal: #1A1A1A;
+  --nilium-gold-light: #F5EDD6;
+  --nilium-navy-light: #EEF1F8;
+  --nilium-muted: #888888;
 }
 
 html {

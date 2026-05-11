@@ -1,8 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import type { Language } from './i18n';
+import type { CartItem } from './store';
 import { useCart } from './store';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
+import { BrandValuesStrip } from './components/BrandValuesStrip';
 import { ShopSection } from './components/ShopSection';
 import { StorySection } from './components/StorySection';
 import { PackagingSection } from './components/PackagingSection';
@@ -12,16 +14,25 @@ import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
 import { CartDrawer } from './components/CartDrawer';
 import { CookieBanner } from './components/CookieBanner';
+import { ToastProvider, useToast } from './components/Toast';
+import { translations } from './i18n';
 
-const App: React.FC = () => {
+const AppInner: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
   const [cartOpen, setCartOpen] = useState(false);
   const { items, addItem, removeItem, totalItems, subtotal, currency, setCurrency, formatPrice } = useCart();
+  const { showToast } = useToast();
+  const t = translations[lang];
 
   const handleNavigate = useCallback((href: string) => {
     const el = document.querySelector(href);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   }, []);
+
+  const handleAddToCart = useCallback((item: Omit<CartItem, 'qty'>) => {
+    addItem(item);
+    showToast(t['cart.added']);
+  }, [addItem, showToast, t]);
 
   return (
     <div className="min-h-screen">
@@ -36,7 +47,8 @@ const App: React.FC = () => {
       />
 
       <HeroSection lang={lang} />
-      <ShopSection lang={lang} formatPrice={formatPrice} onAddToCart={addItem} />
+      <BrandValuesStrip lang={lang} />
+      <ShopSection lang={lang} formatPrice={formatPrice} onAddToCart={handleAddToCart} />
       <StorySection lang={lang} />
       <PackagingSection lang={lang} />
       <HowItWorksSection lang={lang} />
@@ -59,5 +71,11 @@ const App: React.FC = () => {
     </div>
   );
 };
+
+const App: React.FC = () => (
+  <ToastProvider>
+    <AppInner />
+  </ToastProvider>
+);
 
 export default App;

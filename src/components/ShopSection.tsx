@@ -114,7 +114,7 @@ const ProductCard: React.FC<{
               price,
               image: product.image,
             })}
-            className="flex items-center gap-2 bg-nile text-cream text-[10px] font-accent tracking-[0.15em] uppercase px-4 py-2.5 hover:bg-nile-light transition-colors"
+            className="flex items-center gap-2 bg-nilium-gold text-nilium-navy text-[10px] font-accent font-bold tracking-[0.15em] uppercase px-4 py-2.5 hover:bg-nilium-gold/90 transition-colors rounded-none"
           >
             <ShoppingBag size={12} />
             {t['product.addToCart']}

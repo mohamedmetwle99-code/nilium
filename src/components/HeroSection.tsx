@@ -114,13 +114,13 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         >
           <a
             href="#shop"
-            className="border border-solar/60 bg-solar/10 text-solar text-[11px] tracking-[0.25em] uppercase font-accent px-10 py-4 hover:bg-solar hover:text-nile-dark transition-all duration-500"
+            className="bg-nilium-gold text-nilium-navy text-[11px] tracking-[0.25em] uppercase font-accent font-bold px-10 py-4 hover:bg-nilium-gold/90 transition-all duration-300"
           >
             {t['hero.cta']}
           </a>
           <a
             href="#story"
-            className="border border-cream/15 text-cream/55 text-[11px] tracking-[0.25em] uppercase font-accent px-10 py-4 hover:border-cream/40 hover:text-cream/85 transition-all duration-500"
+            className="border border-nilium-gold/60 text-nilium-gold text-[11px] tracking-[0.25em] uppercase font-accent px-10 py-4 hover:bg-nilium-gold/10 transition-all duration-300"
           >
             {t['hero.ctaSecondary']}
           </a>

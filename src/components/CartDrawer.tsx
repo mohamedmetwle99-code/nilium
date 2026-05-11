@@ -4,6 +4,7 @@ import { X, ShoppingBag } from 'lucide-react';
 import type { Language } from '../i18n';
 import type { CartItem, Currency } from '../store';
 import { translations } from '../i18n';
+import { useToast } from './Toast';
 
 interface Props {
   lang: Language;
@@ -18,6 +19,7 @@ interface Props {
 
 export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice, currency }) => {
   const t = translations[lang];
+  const { showToast } = useToast();
 
   const handleCheckout = async () => {
     try {
@@ -42,9 +44,9 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
         return;
       }
       if (data.url) window.location.href = data.url;
-      else alert('Checkout failed: ' + (data.error || 'Unknown error'));
+      else showToast(data.error || 'Checkout failed. Please try again.');
     } catch(e) {
-      alert('Checkout error: ' + e);
+      showToast('Checkout error. Please try again.');
     }
   };
 
@@ -116,7 +118,7 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                 </div>
                 <button
                   onClick={handleCheckout}
-                  className="w-full bg-nile text-cream py-4 font-accent text-xs tracking-[0.2em] uppercase hover:bg-nile-light transition-colors"
+                  className="w-full bg-nilium-gold text-nilium-navy py-4 font-accent font-bold text-xs tracking-[0.2em] uppercase hover:bg-nilium-gold/90 transition-colors rounded-none"
                 >
                   {t['cart.checkout']}
                 </button>
