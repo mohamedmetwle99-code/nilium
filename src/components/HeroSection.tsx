@@ -26,7 +26,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img src="/images/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-b from-nile-dark/75 via-nile/55 to-nile-dark/90" />
+        <div className="absolute inset-0 bg-gradient-to-b from-nile-dark/50 via-nile/35 to-nile-dark/60" />
       </div>
 
       {mounted && particles.map((p) => (
