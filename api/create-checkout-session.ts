@@ -49,6 +49,10 @@ export default async function handler(req: any, res: any) {
       mode: 'payment',
       success_url: `${baseUrl}/success`,
       cancel_url: `${baseUrl}/cancel`,
+      shipping_address_collection: {
+        allowed_countries: ['CH', 'DE', 'AT', 'FR', 'IT', 'GB'],
+      },
+      phone_number_collection: { enabled: true },
     });
 
     res.status(200).json({ url: session.url, id: session.id });
