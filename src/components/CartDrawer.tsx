@@ -77,7 +77,10 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
             className="fixed top-0 right-0 bottom-0 z-50 w-full max-w-md bg-ivory shadow-2xl flex flex-col"
           >
             <div className="flex items-center justify-between p-6 border-b border-cream-dark">
-              <h2 className="font-display text-xl text-charcoal">{t['cart.title']}</h2>
+              <div>
+                <h2 className="font-display text-xl md:text-2xl text-charcoal">{t['cart.title']}</h2>
+                <p className="font-display italic text-[11px] text-solar mt-0.5">{t['cart.subtitle']}</p>
+              </div>
               <button onClick={onClose} className="text-charcoal/50 hover:text-charcoal transition-colors">
                 <X size={20} />
               </button>
@@ -133,7 +136,7 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                 <div className="space-y-6">
                   {items.map((item) => (
                     <div key={`${item.id}-${item.variant}`} className="flex gap-4">
-                      <div className="w-20 h-20 bg-cream overflow-hidden flex-shrink-0">
+                      <div className="w-20 h-20 bg-cream overflow-hidden flex-shrink-0 border border-nile-dark/8">
                         <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
                       </div>
                       <div className="flex-1 min-w-0">

@@ -34,7 +34,7 @@ export const NewsletterSuccessModal: React.FC<Props> = ({ open, onClose, lang })
             initial={{ opacity: 0, scale: 0.92, y: 10 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
-            transition={{ duration: 0.4, ease: 'easeOut' }}
+            transition={{ duration: 0.5, ease: [0.4, 0, 0.2, 1] }}
             className="bg-cream max-w-md w-full mx-5 px-8 py-12 md:px-12 md:py-14 relative border-t-2 border-solar/40"
             onClick={(e) => e.stopPropagation()}
           >

@@ -54,7 +54,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 0.7 }}
+          transition={{ delay: 0.4, duration: 0.5 }}
           className="text-solar-light/70 text-[10px] md:text-xs tracking-[0.5em] uppercase font-accent font-light mb-5"
         >
           {t['hero.tagline']}
@@ -64,7 +64,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.h1
           initial={{ opacity: 0, y: 25 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.7, duration: 0.8 }}
+          transition={{ delay: 0.5, duration: 0.6 }}
           className="text-7xl md:text-9xl lg:text-[8rem] font-display font-medium text-cream tracking-[0.18em] mb-3 leading-none"
         >
           <span className="gold-shimmer">{t['hero.title']}</span>
@@ -74,7 +74,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.div
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ delay: 1.1, duration: 0.9 }}
+          transition={{ delay: 0.8, duration: 0.6 }}
           className="h-[1.5px] bg-solar mx-auto mb-4 w-40 origin-center"
         />
 
@@ -82,7 +82,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.3, duration: 0.7 }}
+          transition={{ delay: 0.9, duration: 0.5 }}
           className="text-cream/40 text-[10px] tracking-[0.5em] uppercase font-accent mb-7"
         >
           {t['hero.est']}
@@ -92,7 +92,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.4, duration: 0.7 }}
+          transition={{ delay: 1.0, duration: 0.5 }}
           className="text-solar-light text-xs md:text-sm tracking-[0.3em] uppercase font-accent font-extralight mb-7"
         >
           {t['hero.subtitle']}
@@ -102,7 +102,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.p
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.6, duration: 0.7 }}
+          transition={{ delay: 1.1, duration: 0.5 }}
           className="text-cream/55 text-sm md:text-base font-body font-light max-w-xl mx-auto mb-10 leading-relaxed"
         >
           {t['hero.desc']}
@@ -111,7 +111,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.div
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.9, duration: 0.7 }}
+          transition={{ delay: 1.3, duration: 0.5 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
@@ -131,7 +131,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.3, duration: 0.8 }}
+          transition={{ delay: 1.5, duration: 0.6 }}
           className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-12 text-cream/50 text-[10px] tracking-[0.18em] uppercase font-accent"
         >
           <div className="flex items-center gap-2">
@@ -152,7 +152,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 2.6 }}
+        transition={{ delay: 1.8 }}
         className="absolute bottom-7 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-cream/25"
       >
         <span className="text-[9px] tracking-[0.3em] uppercase font-accent">{t['hero.scroll']}</span>

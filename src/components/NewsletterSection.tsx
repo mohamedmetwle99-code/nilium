@@ -57,7 +57,7 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-display font-normal text-cream tracking-wide mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-normal text-cream tracking-wide mb-4">
             {t['newsletter.title']}
           </h2>
           <p className="text-cream/45 font-body font-light text-sm leading-relaxed mb-8">
@@ -70,7 +70,7 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder={t['newsletter.placeholder']}
               disabled={submitting}
-              className="flex-1 bg-transparent border border-cream/15 px-5 py-3.5 text-sm font-body text-cream placeholder-cream/25 focus:outline-none focus:border-solar/40 transition-colors disabled:opacity-50"
+              className="flex-1 bg-transparent border border-cream/15 px-5 py-3.5 text-sm font-body text-cream placeholder-cream/25 focus:outline-none focus:border-solar/40 focus:ring-1 focus:ring-solar/20 transition-colors duration-300 disabled:opacity-50"
             />
             <button
               type="submit"

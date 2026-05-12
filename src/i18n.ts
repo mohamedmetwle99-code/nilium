@@ -155,7 +155,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'currency.chf': 'CHF',
     'currency.eur': 'EUR',
 
-    'cart.title': 'Your Cart',
+    'cart.title': 'Your Selection',
+    'cart.subtitle': 'Quiet treasures await',
     'cart.empty': 'Your cart is empty',
     'cart.subtotal': 'Subtotal',
     'cart.checkout': 'Proceed to Checkout',
@@ -364,7 +365,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'currency.chf': 'CHF',
     'currency.eur': 'EUR',
 
-    'cart.title': 'Ihr Warenkorb',
+    'cart.title': 'Ihre Auswahl',
+    'cart.subtitle': 'Stille Schätze erwarten Sie',
     'cart.empty': 'Ihr Warenkorb ist leer',
     'cart.subtotal': 'Zwischensumme',
     'cart.checkout': 'Zur Kasse',

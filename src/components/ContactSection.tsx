@@ -81,14 +81,14 @@ export const ContactSection: React.FC<Props> = ({ lang }) => {
                 <label className="text-[10px] tracking-[0.15em] font-accent text-charcoal/50 uppercase block mb-1.5">{t['contact.name']}</label>
                 <input
                   type="text"
-                  className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 transition-colors"
+                  className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 focus:ring-1 focus:ring-solar/20 transition-colors duration-300"
                 />
               </div>
               <div>
                 <label className="text-[10px] tracking-[0.15em] font-accent text-charcoal/50 uppercase block mb-1.5">{t['contact.email']}</label>
                 <input
                   type="email"
-                  className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 transition-colors"
+                  className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 focus:ring-1 focus:ring-solar/20 transition-colors duration-300"
                 />
               </div>
             </div>
@@ -96,14 +96,14 @@ export const ContactSection: React.FC<Props> = ({ lang }) => {
               <label className="text-[10px] tracking-[0.15em] font-accent text-charcoal/50 uppercase block mb-1.5">{t['contact.subject']}</label>
               <input
                 type="text"
-                className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 transition-colors"
+                className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 focus:ring-1 focus:ring-solar/20 transition-colors duration-300"
               />
             </div>
             <div>
               <label className="text-[10px] tracking-[0.15em] font-accent text-charcoal/50 uppercase block mb-1.5">{t['contact.message']}</label>
               <textarea
                 rows={5}
-                className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 transition-colors resize-none"
+                className="w-full bg-white border border-cream-dark px-4 py-3 text-sm font-body text-charcoal focus:outline-none focus:border-solar/40 focus:ring-1 focus:ring-solar/20 transition-colors duration-300 resize-none"
               />
             </div>
             <button
