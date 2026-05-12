@@ -19,11 +19,12 @@ interface Product {
   key: string;
   image: string;
   collection: string;
+  isNew?: boolean;
 }
 
 const products: Product[] = [
-  { id: 'nile', key: 'nile', image: '/images/candle-nile.jpg', collection: 'nile' },
-  { id: 'alpine', key: 'alpine', image: '/images/candle-alpine.jpg', collection: 'alpine' },
+  { id: 'nile', key: 'nile', image: '/images/candle-nile.jpg', collection: 'nile', isNew: true },
+  { id: 'alpine', key: 'alpine', image: '/images/candle-alpine.jpg', collection: 'alpine', isNew: true },
 ];
 
 const ProductCard: React.FC<{
@@ -57,7 +58,7 @@ const ProductCard: React.FC<{
       initial={{ opacity: 0, y: 50 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay, duration: 0.7 }}
-      className="group bg-white border border-cream-dark/50 hover:shadow-xl hover:shadow-black/5 transition-all duration-500"
+      className="group bg-white border border-transparent hover:border-solar/20 hover:shadow-2xl hover:shadow-nile-dark/15 hover:-translate-y-1 transition-all duration-500"
     >
       <div className="relative aspect-[4/5] overflow-hidden bg-cream">
         <img
@@ -67,6 +68,12 @@ const ProductCard: React.FC<{
           loading="lazy"
         />
         <div className="absolute inset-0 bg-nile-dark/0 group-hover:bg-nile-dark/10 transition-all duration-500" />
+        {/* NEW badge */}
+        {product.isNew && (
+          <div className="absolute top-3 left-3 z-10 bg-solar text-nile-dark text-[10px] tracking-[0.18em] uppercase font-accent font-medium px-3 py-1">
+            {t['shop.badge.new']}
+          </div>
+        )}
         {/* Bestseller badge */}
         {product.id === 'nile' && (
           <div className="absolute top-3 right-3 bg-solar text-nile-dark text-[9px] font-accent font-semibold tracking-wider uppercase px-3 py-1">

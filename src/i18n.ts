@@ -24,6 +24,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'featured.subtitle': 'Three collections, each a bridge between two ancient worlds.',
     'featured.shopAll': 'Shop All Products',
 
+    'shop.badge.new': 'New',
+
     'product.addToCart': 'Add to Cart',
     'product.details': 'Details',
     'product.ingredients': 'Ingredients',
@@ -224,6 +226,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'featured.title': 'Entdecken Sie unsere Signaturen',
     'featured.subtitle': 'Drei Kollektionen, jede eine Brücke zwischen zwei antiken Welten.',
     'featured.shopAll': 'Alle Produkte ansehen',
+
+    'shop.badge.new': 'Neu',
 
     'product.addToCart': 'In den Warenkorb',
     'product.details': 'Details',
