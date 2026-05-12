@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Leaf, Truck, Award } from 'lucide-react';
 import { LotusMark } from './NiliumLogo';
 import type { Language } from '../i18n';
 import { translations } from '../i18n';
@@ -124,6 +124,26 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
           >
             {t['hero.ctaSecondary']}
           </a>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 2.3, duration: 0.8 }}
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mt-12 text-cream/50 text-[10px] tracking-[0.18em] uppercase font-accent"
+        >
+          <div className="flex items-center gap-2">
+            <Leaf size={12} className="text-solar/70" />
+            <span>{t['hero.trust.natural']}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Truck size={12} className="text-solar/70" />
+            <span>{t['hero.trust.shipping']}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Award size={12} className="text-solar/70" />
+            <span>{t['hero.trust.swiss']}</span>
+          </div>
         </motion.div>
       </div>
 

@@ -18,6 +18,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Shop the Collection',
     'hero.ctaSecondary': 'Our Story',
     'hero.scroll': 'Scroll to explore',
+    'hero.trust.natural': '100% Natural Soy Wax',
+    'hero.trust.shipping': 'Free Shipping over CHF 100',
+    'hero.trust.swiss': 'Made in Switzerland',
 
     'featured.label': 'New Arrivals',
     'featured.title': 'Discover Our Signatures',
@@ -25,6 +28,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'featured.shopAll': 'Shop All Products',
 
     'shop.badge.new': 'New',
+    'shop.handpoured': 'Hand-poured in Switzerland',
 
     'product.addToCart': 'Add to Cart',
     'product.details': 'Details',
@@ -168,6 +172,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'cart.empty.desc': 'Discover our hand-poured luxury candles and wax sachets, crafted where the Nile meets the Alps.',
     'cart.empty.cta': 'Explore the Collection',
     'cart.processing': 'Processing...',
+    'cart.trust.secure': 'Secure checkout',
+    'cart.trust.stripe': 'Powered by Stripe',
 
     'notfound.title': '404',
     'notfound.subtitle': 'This path leads nowhere',
@@ -221,6 +227,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'hero.cta': 'Kollektion entdecken',
     'hero.ctaSecondary': 'Unsere Geschichte',
     'hero.scroll': 'Scrollen zum Entdecken',
+    'hero.trust.natural': '100% Natürliches Sojawachs',
+    'hero.trust.shipping': 'Gratis Versand ab CHF 100',
+    'hero.trust.swiss': 'Hergestellt in der Schweiz',
 
     'featured.label': 'Neuheiten',
     'featured.title': 'Entdecken Sie unsere Signaturen',
@@ -228,6 +237,7 @@ export const translations: Record<Language, Record<string, string>> = {
     'featured.shopAll': 'Alle Produkte ansehen',
 
     'shop.badge.new': 'Neu',
+    'shop.handpoured': 'Handgegossen in der Schweiz',
 
     'product.addToCart': 'In den Warenkorb',
     'product.details': 'Details',
@@ -371,6 +381,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'cart.empty.desc': 'Entdecken Sie unsere handgegossenen Luxuskerzen und Duftsachets, dort geschaffen, wo der Nil auf die Alpen trifft.',
     'cart.empty.cta': 'Kollektion entdecken',
     'cart.processing': 'Verarbeitung...',
+    'cart.trust.secure': 'Sicherer Checkout',
+    'cart.trust.stripe': 'Über Stripe',
 
     'notfound.title': '404',
     'notfound.subtitle': 'Dieser Weg führt ins Nichts',

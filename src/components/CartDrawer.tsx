@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, Loader2 } from 'lucide-react';
+import { X, Loader2, Lock, CreditCard } from 'lucide-react';
 import type { Language } from '../i18n';
 import type { CartItem, Currency } from '../store';
 import { translations } from '../i18n';
@@ -163,6 +163,17 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                 <div className="flex justify-between items-center">
                   <span className="font-accent text-sm text-charcoal/60">{t['cart.subtotal']}</span>
                   <span className="font-display text-xl text-charcoal">{formatPrice(subtotal)}</span>
+                </div>
+                <div className="flex items-center justify-center gap-4 pt-4 pb-2 text-nile-dark/40 text-[10px] font-accent tracking-wider uppercase">
+                  <div className="flex items-center gap-1.5">
+                    <Lock size={11} />
+                    <span>{t['cart.trust.secure']}</span>
+                  </div>
+                  <span className="text-nile-dark/15">|</span>
+                  <div className="flex items-center gap-1.5">
+                    <CreditCard size={11} />
+                    <span>{t['cart.trust.stripe']}</span>
+                  </div>
                 </div>
                 <button
                   onClick={handleCheckout}

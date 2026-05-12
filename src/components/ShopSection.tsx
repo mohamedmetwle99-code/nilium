@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { ShoppingBag, ChevronDown, ChevronUp, Leaf } from 'lucide-react';
+import { ShoppingBag, ChevronDown, ChevronUp, Leaf, MapPin } from 'lucide-react';
 import { LotusIcon } from './BrandIcons';
 import type { Language } from '../i18n';
 import type { CartItem } from '../store';
@@ -91,7 +91,12 @@ const ProductCard: React.FC<{
 
         <h3 className="font-display text-xl text-charcoal tracking-wide mb-1">{name}</h3>
         <p className="text-[10px] tracking-[0.12em] text-solar-dark font-accent uppercase mb-3">{notes}</p>
-        <p className="text-xs text-charcoal/50 font-body font-light leading-relaxed mb-4 line-clamp-2">{desc}</p>
+        <p className="text-xs text-charcoal/50 font-body font-light leading-relaxed mb-2 line-clamp-2">{desc}</p>
+
+        <div className="flex items-center gap-2 text-nile-dark/50 text-[10px] tracking-wider uppercase font-accent my-2">
+          <MapPin size={10} className="text-solar/70" />
+          <span>{t['shop.handpoured']}</span>
+        </div>
 
         {/* Variant selector */}
         <div className="flex gap-1.5 mb-4">
