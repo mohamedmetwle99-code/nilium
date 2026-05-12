@@ -11,7 +11,7 @@ export const NotFound: React.FC = () => {
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden bg-nile-dark text-cream">
       <div
         className="absolute inset-0"
-        style={{ backgroundImage: 'url(/images/hero-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
+        style={{ backgroundImage: 'url(/images/success-bg.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-nile-dark/80 via-nile-dark/70 to-nile-dark/85" />
 
