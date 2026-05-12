@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { motion, useAnimation } from 'framer-motion';
 import { Menu, X, ShoppingBag } from 'lucide-react';
 import { LotusMark } from './NiliumLogo';
 import { LanguageSwitcher } from './LanguageSwitcher';
@@ -22,12 +23,24 @@ export const Navigation: React.FC<Props> = ({
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const t = translations[lang];
+  const cartIconControls = useAnimation();
+  const prevCount = useRef(cartCount);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  useEffect(() => {
+    if (cartCount > prevCount.current) {
+      cartIconControls.start({
+        scale: [1, 1.3, 1],
+        transition: { duration: 0.4, ease: 'easeOut' },
+      });
+    }
+    prevCount.current = cartCount;
+  }, [cartCount, cartIconControls]);
 
   const navItems = [
     { key: 'nav.home', href: '#home' },
@@ -97,7 +110,9 @@ export const Navigation: React.FC<Props> = ({
               onClick={onCartOpen}
               className="relative text-cream/60 hover:text-solar transition-colors p-1"
             >
-              <ShoppingBag size={18} />
+              <motion.div animate={cartIconControls} className="inline-flex">
+                <ShoppingBag size={18} />
+              </motion.div>
               {cartCount > 0 && (
                 <span className="absolute -top-1 -right-1 w-4 h-4 bg-solar text-nile-dark text-[9px] font-bold rounded-full flex items-center justify-center">
                   {cartCount}

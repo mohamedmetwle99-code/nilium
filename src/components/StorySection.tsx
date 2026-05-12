@@ -32,6 +32,26 @@ const ValueCard: React.FC<{ icon: React.ReactNode; label: string; sub: string; d
 const Stat: React.FC<{ num: string; label: string; delay: number }> = ({ num, label, delay }) => {
   const ref = React.useRef(null);
   const inView = useInView(ref, { once: true, margin: '-40px' });
+  const [display, setDisplay] = React.useState(num);
+
+  React.useEffect(() => {
+    if (!inView) return;
+    const m = num.match(/^(\d+)(.*)$/);
+    if (!m) { setDisplay(num); return; }
+    const target = parseInt(m[1], 10);
+    const suffix = m[2];
+    if (target === 0) { setDisplay(num); return; }
+    const duration = 1200;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setDisplay(`${Math.round(eased * target)}${suffix}`);
+      if (progress < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [inView, num]);
+
   return (
     <motion.div
       ref={ref}
@@ -40,7 +60,7 @@ const Stat: React.FC<{ num: string; label: string; delay: number }> = ({ num, la
       transition={{ delay, duration: 0.5 }}
       className="text-center"
     >
-      <div className="text-3xl md:text-4xl font-display text-solar mb-1">{num}</div>
+      <div className="text-3xl md:text-4xl font-display text-solar mb-1">{display}</div>
       <div className="text-[10px] tracking-[0.2em] uppercase font-accent text-charcoal/50">{label}</div>
     </motion.div>
   );

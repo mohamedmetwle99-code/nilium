@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { ChevronDown, Leaf, Truck, Award } from 'lucide-react';
 import { LotusMark } from './NiliumLogo';
 import type { Language } from '../i18n';
@@ -11,6 +11,8 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
   const t = translations[lang];
   const [mounted, setMounted] = useState(false);
   useEffect(() => { setMounted(true); }, []);
+  const { scrollY } = useScroll();
+  const bgY = useTransform(scrollY, [0, 600], [0, -50]);
 
   const particles = React.useMemo(() =>
     Array.from({ length: 15 }, (_, i) => ({
@@ -24,10 +26,10 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      <div className="absolute inset-0">
+      <motion.div className="absolute inset-0" style={{ y: bgY }}>
         <img src="/images/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-nile-dark/50 via-nile/35 to-nile-dark/60" />
-      </div>
+      </motion.div>
 
       {mounted && particles.map((p) => (
         <div
@@ -114,7 +116,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
         >
           <a
             href="#shop"
-            className="bg-nilium-gold text-nilium-navy text-[11px] tracking-[0.25em] uppercase font-accent font-bold px-10 py-4 hover:bg-nilium-gold/90 transition-all duration-300"
+            className="bg-nilium-gold text-nilium-navy text-[11px] tracking-[0.25em] uppercase font-accent font-bold px-10 py-4 hover:bg-nilium-gold/90 hover:shadow-lg hover:shadow-solar/30 transition-all duration-300"
           >
             {t['hero.cta']}
           </a>
