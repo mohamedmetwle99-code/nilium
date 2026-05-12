@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ShoppingBag } from 'lucide-react';
+import { LotusMark } from './NiliumLogo';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import type { Language } from '../i18n';
 import type { Currency } from '../store';
@@ -50,25 +51,9 @@ export const Navigation: React.FC<Props> = ({
       }`}>
         <div className="max-w-7xl mx-auto px-5 flex items-center justify-between">
           {/* Logo */}
-          <a href="#home" onClick={() => handleNav('#home')} className="flex items-center">
-            <img
-              src="/images/logo/logo-horizontal.png"
-              alt="NILIUM"
-              className="hidden md:block h-12 lg:h-14 w-auto"
-              width="280"
-              height="56"
-              loading="eager"
-              decoding="async"
-            />
-            <img
-              src="/images/logo/logo-lotus.png"
-              alt="NILIUM"
-              className="block md:hidden h-10 w-auto"
-              width="40"
-              height="40"
-              loading="eager"
-              decoding="async"
-            />
+          <a href="#home" onClick={() => handleNav('#home')} className="text-solar flex items-center gap-2.5 group">
+            <LotusMark size={28} strokeWidth={1.6} className="group-hover:scale-110 transition-transform duration-500" />
+            <span className="font-display tracking-[0.25em] text-base md:text-lg font-medium">NILIUM</span>
           </a>
 
           {/* Desktop nav */}
