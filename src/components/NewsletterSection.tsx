@@ -3,6 +3,7 @@ import { motion, useInView } from 'framer-motion';
 import type { Language } from '../i18n';
 import { translations } from '../i18n';
 import { useToast } from './Toast';
+import { NewsletterSuccessModal } from './NewsletterSuccessModal';
 
 interface Props { lang: Language; }
 
@@ -13,6 +14,7 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
   const { showToast } = useToast();
   const [email, setEmail] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -31,8 +33,8 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
       let data: any;
       try { data = JSON.parse(text); } catch { data = {}; }
       if (res.ok) {
-        showToast(t['newsletter.success'] || 'Welcome to the circle');
         setEmail('');
+        setShowSuccess(true);
       } else {
         showToast(data.error || 'Something went wrong. Please try again.');
       }
@@ -81,6 +83,12 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
           <p className="text-cream/20 text-[10px] font-body mt-3">{t['newsletter.privacy']}</p>
         </motion.div>
       </div>
+
+      <NewsletterSuccessModal
+        open={showSuccess}
+        onClose={() => setShowSuccess(false)}
+        lang={lang}
+      />
     </section>
   );
 };

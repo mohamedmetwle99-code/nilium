@@ -122,6 +122,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.privacy': 'We respect your privacy. Unsubscribe anytime.',
     'newsletter.success': 'Welcome to the circle',
     'newsletter.joining': 'Joining...',
+    'newsletter.modal.title': 'Welcome to the Circle',
+    'newsletter.modal.subtitle': 'Your name is now woven into our story.',
+    'newsletter.modal.body': 'Thank you for joining us. You will be the first to know when new rituals arrive — quiet luxury, born where the Nile meets the Alps. Until then, breathe slowly. We will write to you soon.',
+    'newsletter.modal.close': 'Continue',
 
     'footer.tagline': 'Swiss Purity · Nile Soul',
     'footer.taglineSecondary': 'Quiet Luxury, Deeply Felt.',
@@ -303,6 +307,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.privacy': 'Wir respektieren Ihre Privatsphäre. Jederzeit abmeldbar.',
     'newsletter.success': 'Willkommen im Kreis',
     'newsletter.joining': 'Beitritt läuft...',
+    'newsletter.modal.title': 'Willkommen im Kreis',
+    'newsletter.modal.subtitle': 'Ihr Name ist nun in unsere Geschichte gewoben.',
+    'newsletter.modal.body': 'Danke, dass Sie uns beitreten. Sie werden als Erste erfahren, wenn neue Rituale eintreffen — stille Eleganz, geboren dort, wo der Nil auf die Alpen trifft. Bis dahin, atmen Sie ruhig. Wir schreiben Ihnen bald.',
+    'newsletter.modal.close': 'Fortfahren',
 
     'footer.tagline': 'Schweizer Reinheit · Seele des Nils',
     'footer.taglineSecondary': 'Stiller Luxus, tief empfunden.',
