@@ -51,11 +51,6 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
     { label: t['footer.impressum'],  page: 'impressum' },
   ];
 
-  const socials = [
-    { abbr: 'IG', label: 'Instagram' },
-    { abbr: 'PT', label: 'Pinterest' },
-    { abbr: 'TT', label: 'TikTok' },
-  ];
 
   return (
     <footer className="bg-nilium-navy pt-16 pb-8">
@@ -73,20 +68,31 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
             <p className="text-white/50 text-sm font-body leading-relaxed mb-5">
               {t['footer.taglineBrand']}
             </p>
-            <div className="flex items-center gap-2">
-              <span className="text-white/30 text-[10px] font-accent tracking-wider uppercase mr-1">
-                {t['footer.social']}
-              </span>
-              {socials.map(s => (
-                <a
-                  key={s.abbr}
-                  href="#"
-                  aria-label={s.label}
-                  className="w-8 h-8 border border-white/15 hover:border-nilium-gold/60 hover:text-nilium-gold flex items-center justify-center text-white/35 text-[9px] font-accent font-bold transition-colors"
-                >
-                  {s.abbr}
-                </a>
-              ))}
+            <div className="flex items-center gap-3">
+              <a
+                href="https://instagram.com/nilium.ch"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="NILIUM on Instagram"
+                className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-nilium-gold hover:bg-nilium-gold hover:border-nilium-gold hover:text-nilium-navy transition-all duration-200"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+              <a
+                href="https://tiktok.com/@niliumofficial"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="NILIUM on TikTok"
+                className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-nilium-gold hover:bg-nilium-gold hover:border-nilium-gold hover:text-nilium-navy transition-all duration-200"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.31 6.31 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V9.14a8.23 8.23 0 004.81 1.53V7.23a4.85 4.85 0 01-1.04-.54z" />
+                </svg>
+              </a>
             </div>
           </div>
 

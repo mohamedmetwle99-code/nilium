@@ -33,7 +33,15 @@ export const Success: React.FC = () => {
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           className="mb-8"
         >
-          <img src="/icons/icon-lotus.png" className="w-16 h-16 mx-auto opacity-90" alt="NILIUM" />
+          <img
+            src="/images/logo/monogram.png"
+            alt="NILIUM"
+            className="w-20 h-20 mx-auto opacity-95"
+            width="80"
+            height="80"
+            loading="eager"
+            decoding="async"
+          />
         </motion.div>
 
         {/* Heading */}
