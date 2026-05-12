@@ -165,6 +165,13 @@ export const translations: Record<Language, Record<string, string>> = {
     'cart.empty.title': 'Your Cart is Empty',
     'cart.empty.desc': 'Discover our hand-poured luxury candles and wax sachets, crafted where the Nile meets the Alps.',
     'cart.empty.cta': 'Explore the Collection',
+    'cart.processing': 'Processing...',
+
+    'notfound.title': '404',
+    'notfound.subtitle': 'This path leads nowhere',
+    'notfound.body': 'Even rivers sometimes find dead ends. Let us guide you back to the source.',
+    'notfound.home': 'Return Home',
+    'notfound.shop': 'Explore Shop',
 
     'legal.privacy.title': 'Privacy Policy',
     'legal.terms.title': 'Terms & Conditions',
@@ -359,6 +366,13 @@ export const translations: Record<Language, Record<string, string>> = {
     'cart.empty.title': 'Ihr Warenkorb ist leer',
     'cart.empty.desc': 'Entdecken Sie unsere handgegossenen Luxuskerzen und Duftsachets, dort geschaffen, wo der Nil auf die Alpen trifft.',
     'cart.empty.cta': 'Kollektion entdecken',
+    'cart.processing': 'Verarbeitung...',
+
+    'notfound.title': '404',
+    'notfound.subtitle': 'Dieser Weg führt ins Nichts',
+    'notfound.body': 'Auch Flüsse enden manchmal in einer Sackgasse. Lassen Sie uns Sie zurück zur Quelle führen.',
+    'notfound.home': 'Zurück zum Anfang',
+    'notfound.shop': 'Shop entdecken',
 
     'legal.privacy.title': 'Datenschutzerklärung',
     'legal.terms.title': 'Allgemeine Geschäftsbedingungen',

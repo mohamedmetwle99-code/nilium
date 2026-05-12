@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X } from 'lucide-react';
+import { X, Loader2 } from 'lucide-react';
 import type { Language } from '../i18n';
 import type { CartItem, Currency } from '../store';
 import { translations } from '../i18n';
@@ -22,10 +22,12 @@ const THRESHOLD = 100;
 export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice, currency }) => {
   const t = translations[lang];
   const { showToast } = useToast();
+  const [checkingOut, setCheckingOut] = useState(false);
   const remaining = Math.max(0, THRESHOLD - subtotal);
   const progress = Math.min(100, (subtotal / THRESHOLD) * 100);
 
   const handleCheckout = async () => {
+    setCheckingOut(true);
     try {
       const response = await fetch('/api/create-checkout-session', {
         method: 'POST',
@@ -51,6 +53,8 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
       else showToast(data.error || 'Checkout failed. Please try again.');
     } catch(e) {
       showToast('Checkout error. Please try again.');
+    } finally {
+      setCheckingOut(false);
     }
   };
 
@@ -162,9 +166,11 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                 </div>
                 <button
                   onClick={handleCheckout}
-                  className="w-full bg-nilium-gold text-nilium-navy py-4 font-accent font-bold text-xs tracking-[0.2em] uppercase hover:bg-nilium-gold/90 transition-colors rounded-none"
+                  disabled={checkingOut}
+                  className="w-full bg-nilium-gold text-nilium-navy py-4 font-accent font-bold text-xs tracking-[0.2em] uppercase hover:bg-nilium-gold/90 transition-colors rounded-none disabled:opacity-60 disabled:cursor-not-allowed"
                 >
-                  {t['cart.checkout']}
+                  {checkingOut && <Loader2 size={14} className="inline animate-spin mr-2" />}
+                  {checkingOut ? t['cart.processing'] : t['cart.checkout']}
                 </button>
                 <p className="text-center text-[10px] text-charcoal/30 font-body">
                   PostFinance · TWINT · Visa · Mastercard · PayPal

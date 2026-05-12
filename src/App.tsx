@@ -17,6 +17,7 @@ import { LegalModal } from './components/LegalModal';
 import type { LegalPage } from './components/LegalModal';
 import { ToastProvider } from './components/Toast';
 import { MiniCartPopup } from './components/MiniCartPopup';
+import { ScrollToTop } from './components/ScrollToTop';
 import { translations } from './i18n';
 
 const AppInner: React.FC = () => {
@@ -80,6 +81,8 @@ const AppInner: React.FC = () => {
         onViewCart={() => { setMiniCartOpen(false); setCartOpen(true); }}
         lang={lang}
       />
+
+      <ScrollToTop />
 
       {(['privacy', 'terms', 'cookies', 'shipping', 'impressum'] as LegalPage[]).map((page) => (
         <LegalModal
