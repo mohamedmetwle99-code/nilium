@@ -11,7 +11,7 @@ export const Cancel: React.FC = () => {
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background — same image, slightly darker overlay to signal pause */}
       <div className="absolute inset-0">
-        <img src="/images/success-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="/images/success-bg.jpg" alt="" className="w-full h-full object-cover" loading="eager" decoding="async" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-b from-nilium-navy/55 via-nilium-navy/65 to-nilium-navy/90" />
       </div>
 
@@ -28,7 +28,7 @@ export const Cancel: React.FC = () => {
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           className="mb-8"
         >
-          <img src="/icons/icon-lotus.png" className="w-16 h-16 mx-auto opacity-50" alt="NILIUM" />
+          <img src="/icons/icon-lotus.png" className="w-16 h-16 mx-auto opacity-50" alt="NILIUM" loading="eager" decoding="async" />
         </motion.div>
 
         <motion.h1

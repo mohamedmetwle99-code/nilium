@@ -52,6 +52,8 @@ export const NewsletterSuccessModal: React.FC<Props> = ({ open, onClose, lang })
               src="/icons/icon-lotus.png"
               alt=""
               className="w-12 h-12 mx-auto mb-6 opacity-80"
+              loading="lazy"
+              decoding="async"
             />
 
             {/* Heading */}

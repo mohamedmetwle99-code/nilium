@@ -207,6 +207,8 @@ export const ScentQuiz: React.FC<Props> = ({ lang }) => {
                 src="/icons/icon-lotus.png"
                 alt=""
                 className="w-12 h-12 mx-auto mb-6 opacity-80"
+                loading="lazy"
+                decoding="async"
               />
               <p className="text-solar text-xs tracking-[0.3em] uppercase font-accent mb-4">
                 {result === 'both' ? t['quiz.result.duo'] : t['quiz.result.match']}

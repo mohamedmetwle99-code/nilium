@@ -27,7 +27,7 @@ export const HeroSection: React.FC<Props> = ({ lang }) => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <motion.div className="absolute inset-0" style={{ y: bgY }}>
-        <img src="/images/hero-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="/images/hero-bg.jpg" alt="" className="w-full h-full object-cover" loading="eager" decoding="async" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-b from-nile-dark/50 via-nile/35 to-nile-dark/60" />
       </motion.div>
 

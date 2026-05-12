@@ -113,6 +113,8 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                     src="/icons/icon-lotus.png"
                     alt=""
                     className="w-14 h-14 mx-auto mb-5 opacity-25"
+                    loading="lazy"
+                    decoding="async"
                   />
                   <h3 className="font-display text-lg text-charcoal/60 mb-2">
                     {t['cart.empty.title']}
@@ -137,7 +139,7 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
                   {items.map((item) => (
                     <div key={`${item.id}-${item.variant}`} className="flex gap-4">
                       <div className="w-20 h-20 bg-cream overflow-hidden flex-shrink-0 border border-nile-dark/8">
-                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" />
+                        <img src={item.image} alt={item.name} className="w-full h-full object-cover" loading="lazy" decoding="async" />
                       </div>
                       <div className="flex-1 min-w-0">
                         <h4 className="font-display text-sm text-charcoal">{item.name}</h4>

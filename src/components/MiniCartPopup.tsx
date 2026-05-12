@@ -44,6 +44,8 @@ export const MiniCartPopup: React.FC<Props> = ({ open, product, onClose, onViewC
               src={product.image}
               alt={product.name}
               className="w-16 h-16 object-cover flex-shrink-0"
+              loading="lazy"
+              decoding="async"
             />
             <div className="flex-1 ml-4">
               <p className="text-solar text-[10px] tracking-[0.2em] uppercase font-accent mb-1">

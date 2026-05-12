@@ -25,6 +25,8 @@ export const NotFound: React.FC = () => {
           src="/icons/icon-lotus.png"
           alt=""
           className="w-16 h-16 mx-auto mb-8 opacity-60"
+          loading="eager"
+          decoding="async"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 0.6, scale: 1 }}
           transition={{ delay: 0.1, duration: 0.6 }}

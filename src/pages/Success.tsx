@@ -16,7 +16,7 @@ export const Success: React.FC = () => {
     <main className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
       <div className="absolute inset-0">
-        <img src="/images/success-bg.jpg" alt="" className="w-full h-full object-cover" />
+        <img src="/images/success-bg.jpg" alt="" className="w-full h-full object-cover" loading="eager" decoding="async" fetchPriority="high" />
         <div className="absolute inset-0 bg-gradient-to-b from-nilium-navy/40 via-nilium-navy/55 to-nilium-navy/85" />
       </div>
 
@@ -33,7 +33,7 @@ export const Success: React.FC = () => {
           transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
           className="mb-8"
         >
-          <img src="/icons/icon-lotus.png" className="w-16 h-16 mx-auto opacity-90" alt="NILIUM" />
+          <img src="/icons/icon-lotus.png" className="w-16 h-16 mx-auto opacity-90" alt="NILIUM" loading="eager" decoding="async" />
         </motion.div>
 
         {/* Heading */}

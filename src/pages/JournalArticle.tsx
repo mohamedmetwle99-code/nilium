@@ -74,6 +74,9 @@ export const JournalArticle: React.FC<Props> = ({ slug }) => {
           alt={article.title[lang]}
           onError={(e) => { (e.target as HTMLImageElement).src = '/images/hero-bg.jpg'; }}
           className="w-full h-full object-cover"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-nile-dark/30" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-5">
