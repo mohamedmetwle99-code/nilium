@@ -149,6 +149,35 @@ export const translations: Record<Language, Record<string, string>> = {
     'cart.checkout': 'Proceed to Checkout',
     'cart.continue': 'Continue Shopping',
     'cart.remove': 'Remove',
+    'cart.added': 'Added to your cart',
+
+    'legal.privacy.title': 'Privacy Policy',
+    'legal.terms.title': 'Terms & Conditions',
+    'legal.cookies.title': 'Cookie Policy',
+    'legal.shipping.title': 'Shipping & Returns',
+    'legal.impressum.title': 'Impressum',
+    'legal.placeholder': 'This policy is being finalized. For any inquiries, please contact us at hello@nilium.ch — we will respond within 48 hours.',
+    'legal.lastUpdated': 'Last updated: May 2026',
+    'legal.close': 'Close',
+    'legal.placeholder.note': 'Full policy text will be published here once finalized.',
+
+    'footer.impressum': 'Impressum',
+    'footer.cookies': 'Cookie Policy',
+
+    'cookie.readPolicy': 'Read our Privacy Policy',
+
+    'success.title': 'Your Ritual Has Begun',
+    'success.subtitle': 'Thank you for joining the circle.',
+    'success.paragraph1': 'Your order has been received and is now resting in our hands. Each candle is hand-poured with intention — a slow ritual that honors both the flame and the one who will light it.',
+    'success.paragraph2': 'You will receive a confirmation email shortly. Delivery typically takes 3–7 business days, depending on your region. We will notify you the moment your package leaves our studio.',
+    'success.paragraph3': 'Questions? Reach us at hello@nilium.ch — we respond within 48 hours.',
+    'success.continueExploring': 'Continue Exploring',
+    'success.viewCollections': 'View Collections',
+    'success.orderId': 'Order ID:',
+
+    'cancel.title': 'Your Ritual Paused',
+    'cancel.body': 'Your cart is still waiting for you. Return whenever you\'re ready.',
+    'cancel.cta': 'Return to Cart',
   },
 
   de: {
@@ -299,5 +328,34 @@ export const translations: Record<Language, Record<string, string>> = {
     'cart.checkout': 'Zur Kasse',
     'cart.continue': 'Weiter einkaufen',
     'cart.remove': 'Entfernen',
+    'cart.added': 'Zum Warenkorb hinzugefügt',
+
+    'legal.privacy.title': 'Datenschutzerklärung',
+    'legal.terms.title': 'Allgemeine Geschäftsbedingungen',
+    'legal.cookies.title': 'Cookie-Richtlinie',
+    'legal.shipping.title': 'Versand & Rückgabe',
+    'legal.impressum.title': 'Impressum',
+    'legal.placeholder': 'Diese Richtlinie wird derzeit fertiggestellt. Bei Fragen kontaktieren Sie uns bitte unter hello@nilium.ch — wir antworten innerhalb von 48 Stunden.',
+    'legal.lastUpdated': 'Zuletzt aktualisiert: Mai 2026',
+    'legal.close': 'Schließen',
+    'legal.placeholder.note': 'Der vollständige Richtlinientext wird hier veröffentlicht, sobald er fertiggestellt ist.',
+
+    'footer.impressum': 'Impressum',
+    'footer.cookies': 'Cookie-Richtlinie',
+
+    'cookie.readPolicy': 'Datenschutzerklärung lesen',
+
+    'success.title': 'Ihr Ritual hat begonnen',
+    'success.subtitle': 'Willkommen im Kreis.',
+    'success.paragraph1': 'Ihre Bestellung ist bei uns eingegangen und liegt nun in unseren Händen. Jede Kerze wird mit Sorgfalt von Hand gegossen — ein langsames Ritual, das sowohl die Flamme als auch diejenigen ehrt, die sie entzünden werden.',
+    'success.paragraph2': 'Sie erhalten in Kürze eine Bestätigungs-E-Mail. Die Lieferung dauert je nach Region in der Regel 3–7 Werktage. Wir benachrichtigen Sie, sobald Ihr Paket unser Studio verlässt.',
+    'success.paragraph3': 'Fragen? Erreichen Sie uns unter hello@nilium.ch — wir antworten innerhalb von 48 Stunden.',
+    'success.continueExploring': 'Weiter entdecken',
+    'success.viewCollections': 'Kollektionen ansehen',
+    'success.orderId': 'Bestellnummer:',
+
+    'cancel.title': 'Ihr Ritual pausiert',
+    'cancel.body': 'Ihr Warenkorb wartet noch auf Sie. Kehren Sie zurück, wann immer Sie bereit sind.',
+    'cancel.cta': 'Zurück zum Warenkorb',
   },
 };

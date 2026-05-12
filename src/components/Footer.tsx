@@ -3,10 +3,14 @@ import { LotusMark } from './NiliumLogo';
 import { useToast } from './Toast';
 import type { Language } from '../i18n';
 import { translations } from '../i18n';
+import type { LegalPage } from './LegalModal';
 
-interface Props { lang: Language; }
+interface Props {
+  lang: Language;
+  onLegalOpen: (page: LegalPage) => void;
+}
 
-export const Footer: React.FC<Props> = ({ lang }) => {
+export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
   const t = translations[lang];
   const { showToast } = useToast();
   const [email, setEmail] = useState('');
@@ -39,13 +43,12 @@ export const Footer: React.FC<Props> = ({ lang }) => {
     { label: t['nav.contact'],        href: '#contact' },
   ];
 
-  // TODO: Replace '#' placeholders with real page/modal targets when ready
-  const supportLinks = [
-    { label: t['footer.shipping'],  href: '#' },
-    { label: t['footer.careGuide'], href: '#' },
-    { label: t['footer.faq'],       href: '#' },
-    { label: t['footer.privacy'],   href: '#' },
-    { label: t['footer.terms'],     href: '#' },
+  const legalLinks: { label: string; page: LegalPage }[] = [
+    { label: t['footer.shipping'],   page: 'shipping' },
+    { label: t['footer.privacy'],    page: 'privacy' },
+    { label: t['footer.terms'],      page: 'terms' },
+    { label: t['footer.cookies'],    page: 'cookies' },
+    { label: t['footer.impressum'],  page: 'impressum' },
   ];
 
   const socials = [
@@ -106,21 +109,20 @@ export const Footer: React.FC<Props> = ({ lang }) => {
             </ul>
           </div>
 
-          {/* Column 3 — Support */}
+          {/* Column 3 — Legal */}
           <div>
             <h4 className="text-nilium-gold text-[10px] font-accent font-bold tracking-[0.25em] uppercase mb-5">
               {t['footer.support']}
             </h4>
             <ul className="space-y-3">
-              {/* TODO: Replace '#' with real targets when pages/modals are ready */}
-              {supportLinks.map(link => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors"
+              {legalLinks.map(link => (
+                <li key={link.page}>
+                  <button
+                    onClick={() => onLegalOpen(link.page)}
+                    className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors text-left"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

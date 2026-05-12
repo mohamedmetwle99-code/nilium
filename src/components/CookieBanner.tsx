@@ -3,12 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Shield } from 'lucide-react';
 import type { Language } from '../i18n';
 import { translations } from '../i18n';
+import type { LegalPage } from './LegalModal';
 
 interface Props {
   lang: Language;
+  onLegalOpen: (page: LegalPage) => void;
 }
 
-export const CookieBanner: React.FC<Props> = ({ lang }) => {
+export const CookieBanner: React.FC<Props> = ({ lang, onLegalOpen }) => {
   const t = translations[lang];
   const [visible, setVisible] = useState(false);
 
@@ -32,7 +34,13 @@ export const CookieBanner: React.FC<Props> = ({ lang }) => {
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-4">
             <Shield size={20} className="text-solar flex-shrink-0 hidden md:block" />
             <p className="text-cream/70 text-xs font-body leading-relaxed flex-1 text-center md:text-left">
-              {t['cookie.text']}
+              {t['cookie.text']}{' '}
+              <button
+                onClick={() => onLegalOpen('privacy')}
+                className="underline underline-offset-2 hover:text-cream transition-colors"
+              >
+                {t['cookie.readPolicy']}
+              </button>
             </p>
             <div className="flex items-center gap-3 flex-shrink-0">
               <button
