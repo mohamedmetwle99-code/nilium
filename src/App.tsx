@@ -15,15 +15,17 @@ import { CartDrawer } from './components/CartDrawer';
 import { CookieBanner } from './components/CookieBanner';
 import { LegalModal } from './components/LegalModal';
 import type { LegalPage } from './components/LegalModal';
-import { ToastProvider, useToast } from './components/Toast';
+import { ToastProvider } from './components/Toast';
+import { MiniCartPopup } from './components/MiniCartPopup';
 import { translations } from './i18n';
 
 const AppInner: React.FC = () => {
   const [lang, setLang] = useState<Language>('en');
   const [cartOpen, setCartOpen] = useState(false);
   const [legalModal, setLegalModal] = useState<LegalPage | null>(null);
+  const [miniCartOpen, setMiniCartOpen] = useState(false);
+  const [miniCartProduct, setMiniCartProduct] = useState<{ name: string; image: string } | null>(null);
   const { items, addItem, removeItem, totalItems, subtotal, currency, setCurrency, formatPrice } = useCart();
-  const { showToast } = useToast();
   const t = translations[lang];
 
   const handleNavigate = useCallback((href: string) => {
@@ -33,8 +35,9 @@ const AppInner: React.FC = () => {
 
   const handleAddToCart = useCallback((item: Omit<CartItem, 'qty'>) => {
     addItem(item);
-    showToast(t['cart.added']);
-  }, [addItem, showToast, t]);
+    setMiniCartProduct({ name: item.name, image: item.image });
+    setMiniCartOpen(true);
+  }, [addItem]);
 
   return (
     <div className="min-h-screen">
@@ -69,6 +72,14 @@ const AppInner: React.FC = () => {
       />
 
       <CookieBanner lang={lang} onLegalOpen={setLegalModal} />
+
+      <MiniCartPopup
+        open={miniCartOpen}
+        product={miniCartProduct}
+        onClose={() => setMiniCartOpen(false)}
+        onViewCart={() => { setMiniCartOpen(false); setCartOpen(true); }}
+        lang={lang}
+      />
 
       {(['privacy', 'terms', 'cookies', 'shipping', 'impressum'] as LegalPage[]).map((page) => (
         <LegalModal

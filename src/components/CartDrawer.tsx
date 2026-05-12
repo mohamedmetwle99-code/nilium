@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ShoppingBag } from 'lucide-react';
+import { X } from 'lucide-react';
 import type { Language } from '../i18n';
 import type { CartItem, Currency } from '../store';
 import { translations } from '../i18n';
@@ -17,9 +17,13 @@ interface Props {
   currency: Currency;
 }
 
+const THRESHOLD = 100;
+
 export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemove, subtotal, formatPrice, currency }) => {
   const t = translations[lang];
   const { showToast } = useToast();
+  const remaining = Math.max(0, THRESHOLD - subtotal);
+  const progress = Math.min(100, (subtotal / THRESHOLD) * 100);
 
   const handleCheckout = async () => {
     try {
@@ -75,11 +79,51 @@ export const CartDrawer: React.FC<Props> = ({ lang, open, onClose, items, onRemo
               </button>
             </div>
 
+            {items.length > 0 && (
+              <div className="px-6 py-3 border-b border-cream-dark bg-cream/40">
+                {remaining === 0 ? (
+                  <p className="text-[10px] font-accent tracking-[0.15em] uppercase text-solar text-center">
+                    {t['cart.shipping.unlocked']}
+                  </p>
+                ) : (
+                  <p className="text-[10px] font-accent tracking-[0.1em] text-charcoal/50 text-center mb-2">
+                    {t['cart.shipping.add']} <span className="text-charcoal/70">{formatPrice(remaining)}</span> {t['cart.shipping.more']}
+                  </p>
+                )}
+                <div className="h-[2px] w-full bg-cream-dark overflow-hidden rounded-full">
+                  <div
+                    className="h-full bg-solar transition-all duration-500 ease-out rounded-full"
+                    style={{ width: `${progress}%` }}
+                  />
+                </div>
+              </div>
+            )}
+
             <div className="flex-1 overflow-y-auto p-6">
               {items.length === 0 ? (
-                <div className="flex flex-col items-center justify-center h-full text-charcoal/30">
-                  <ShoppingBag size={48} className="mb-4" />
-                  <p className="font-accent text-sm">{t['cart.empty']}</p>
+                <div className="flex flex-col items-center justify-center h-full text-center px-4">
+                  <img
+                    src="/icons/icon-lotus.png"
+                    alt=""
+                    className="w-14 h-14 mx-auto mb-5 opacity-25"
+                  />
+                  <h3 className="font-display text-lg text-charcoal/60 mb-2">
+                    {t['cart.empty.title']}
+                  </h3>
+                  <p className="text-xs font-body text-charcoal/35 leading-relaxed mb-6 max-w-[220px]">
+                    {t['cart.empty.desc']}
+                  </p>
+                  <button
+                    onClick={() => {
+                      onClose();
+                      setTimeout(() => {
+                        document.querySelector('#shop')?.scrollIntoView({ behavior: 'smooth' });
+                      }, 350);
+                    }}
+                    className="bg-nile-dark text-cream text-[10px] tracking-[0.2em] uppercase font-accent px-6 py-3 hover:bg-nile-dark/80 transition-colors"
+                  >
+                    {t['cart.empty.cta']}
+                  </button>
                 </div>
               ) : (
                 <div className="space-y-6">
