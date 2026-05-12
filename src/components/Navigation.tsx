@@ -47,12 +47,17 @@ export const Navigation: React.FC<Props> = ({
     { key: 'nav.shop', href: '#shop' },
     { key: 'nav.story', href: '#story' },
     { key: 'nav.howItWorks', href: '#howto' },
+    { key: 'nav.journal', href: '/journal' },
     { key: 'nav.contact', href: '#contact' },
   ];
 
   const handleNav = (href: string) => {
     setMobileOpen(false);
-    onNavigate(href);
+    if (href.startsWith('#')) {
+      onNavigate(href);
+    } else {
+      window.location.href = href;
+    }
   };
 
   return (

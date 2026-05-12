@@ -250,6 +250,19 @@ export const translations: Record<Language, Record<string, string>> = {
     'quiz.result.shop': 'Discover This Candle',
     'quiz.result.shop_plural': 'Discover These Candles',
     'quiz.result.retake': 'Retake Quiz',
+
+    'nav.journal': 'Journal',
+
+    'journal.eyebrow': 'THE NILIUM JOURNAL',
+    'journal.title': 'Quiet Notes',
+    'journal.subtitle': 'Reflections on ritual, craft, and the beauty of slow living',
+    'journal.minRead': 'min read',
+    'journal.back': 'Back to Journal',
+    'journal.readMore': 'Read More',
+
+    'footer.navigate': 'Navigate',
+    'footer.support': 'Support',
+    'footer.collections': 'Collections',
   },
 
   de: {
@@ -501,5 +514,18 @@ export const translations: Record<Language, Record<string, string>> = {
     'quiz.result.shop': 'Diese Kerze entdecken',
     'quiz.result.shop_plural': 'Diese Kerzen entdecken',
     'quiz.result.retake': 'Quiz wiederholen',
+
+    'nav.journal': 'Journal',
+
+    'journal.eyebrow': 'DAS NILIUM JOURNAL',
+    'journal.title': 'Stille Notizen',
+    'journal.subtitle': 'Reflexionen über Ritual, Handwerk und die Schönheit des langsamen Lebens',
+    'journal.minRead': 'Min. Lesezeit',
+    'journal.back': 'Zurück zum Journal',
+    'journal.readMore': 'Weiterlesen',
+
+    'footer.navigate': 'Navigation',
+    'footer.support': 'Support',
+    'footer.collections': 'Kollektionen',
   },
 };
