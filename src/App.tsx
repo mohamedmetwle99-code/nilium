@@ -5,6 +5,7 @@ import { useCart } from './store';
 import { Navigation } from './components/Navigation';
 import { HeroSection } from './components/HeroSection';
 import { ShopSection } from './components/ShopSection';
+import { ScentQuiz } from './components/ScentQuiz';
 import { StorySection } from './components/StorySection';
 import { PackagingSection } from './components/PackagingSection';
 import { HowItWorksSection } from './components/HowItWorksSection';
@@ -54,6 +55,7 @@ const AppInner: React.FC = () => {
 
       <HeroSection lang={lang} />
       <ShopSection lang={lang} formatPrice={formatPrice} onAddToCart={handleAddToCart} />
+      <ScentQuiz lang={lang} />
       <StorySection lang={lang} />
       <PackagingSection lang={lang} />
       <HowItWorksSection lang={lang} />
