@@ -120,6 +120,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.placeholder': 'your@email.com',
     'newsletter.cta': 'Join the Circle',
     'newsletter.privacy': 'We respect your privacy. Unsubscribe anytime.',
+    'newsletter.success': 'Welcome to the circle',
+    'newsletter.joining': 'Joining...',
 
     'footer.tagline': 'Swiss Purity · Nile Soul',
     'footer.taglineSecondary': 'Quiet Luxury, Deeply Felt.',
@@ -299,6 +301,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.placeholder': 'ihre@email.com',
     'newsletter.cta': 'Dem Zirkel beitreten',
     'newsletter.privacy': 'Wir respektieren Ihre Privatsphäre. Jederzeit abmeldbar.',
+    'newsletter.success': 'Willkommen im Kreis',
+    'newsletter.joining': 'Beitritt läuft...',
 
     'footer.tagline': 'Schweizer Reinheit · Seele des Nils',
     'footer.taglineSecondary': 'Stiller Luxus, tief empfunden.',

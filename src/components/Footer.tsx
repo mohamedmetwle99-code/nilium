@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { LotusMark } from './NiliumLogo';
-import { useToast } from './Toast';
 import type { Language } from '../i18n';
 import { translations } from '../i18n';
 import type { LegalPage } from './LegalModal';
@@ -12,29 +11,6 @@ interface Props {
 
 export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
   const t = translations[lang];
-  const { showToast } = useToast();
-  const [email, setEmail] = useState('');
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    try {
-      const res = await fetch('/api/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (res.ok) {
-        showToast(t['newsletter.cta']);
-        setEmail('');
-      } else {
-        showToast(data.error || 'Subscription failed');
-      }
-    } catch {
-      showToast('Network error. Please try again.');
-    }
-  };
 
   const navigateLinks = [
     { label: t['nav.home'],           href: '#home' },
@@ -52,17 +28,16 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
   ];
 
   const socials = [
-    { abbr: 'IG', label: 'Instagram' },
-    { abbr: 'PT', label: 'Pinterest' },
-    { abbr: 'TT', label: 'TikTok' },
+    { abbr: 'IG', label: 'Instagram', href: 'https://instagram.com/nilium.ch' },
+    { abbr: 'TT', label: 'TikTok',    href: 'https://tiktok.com/@niliumofficial' },
   ];
 
   return (
     <footer className="bg-nilium-navy pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-5">
 
-        {/* 4-column grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        {/* 3-column grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-14">
 
           {/* Column 1 — Brand */}
           <div>
@@ -71,18 +46,17 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
               <span className="font-display tracking-[0.25em] text-white text-base font-medium">NILIUM</span>
             </div>
             <p className="text-white/50 text-sm font-body leading-relaxed mb-5">
-              {t['footer.taglineBrand']}
+              {t['footer.tagline']}
             </p>
-            <div className="flex items-center gap-2">
-              <span className="text-white/30 text-[10px] font-accent tracking-wider uppercase mr-1">
-                {t['footer.social']}
-              </span>
+            <div className="flex items-center gap-3">
               {socials.map(s => (
                 <a
                   key={s.abbr}
-                  href="#"
-                  aria-label={s.label}
-                  className="w-8 h-8 border border-white/15 hover:border-nilium-gold/60 hover:text-nilium-gold flex items-center justify-center text-white/35 text-[9px] font-accent font-bold transition-colors"
+                  href={s.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`NILIUM on ${s.label}`}
+                  className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-nilium-gold hover:bg-nilium-gold hover:border-nilium-gold hover:text-nilium-navy transition-all duration-200 text-[9px] font-accent font-bold"
                 >
                   {s.abbr}
                 </a>
@@ -127,34 +101,9 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
               ))}
             </ul>
           </div>
-
-          {/* Column 4 — Newsletter */}
-          <div>
-            <h4 className="text-nilium-gold text-[10px] font-accent font-bold tracking-[0.25em] uppercase mb-5">
-              {t['footer.newsletter']}
-            </h4>
-            <p className="text-white/50 text-sm font-body mb-4">
-              {t['footer.newsletterTitle']}
-            </p>
-            <form onSubmit={handleNewsletterSubmit} className="flex flex-col gap-2">
-              <input
-                type="email"
-                value={email}
-                onChange={e => setEmail(e.target.value)}
-                placeholder={t['footer.newsletterPlaceholder']}
-                className="bg-transparent border border-white/15 px-4 py-2.5 text-sm font-body text-white placeholder-white/25 focus:outline-none focus:border-nilium-gold/50 transition-colors"
-              />
-              <button
-                type="submit"
-                className="border border-nilium-gold/60 text-nilium-gold text-[11px] font-accent font-bold tracking-[0.12em] uppercase px-4 py-2.5 hover:bg-nilium-gold/10 transition-colors"
-              >
-                {t['footer.newsletterSubmit']}
-              </button>
-            </form>
-          </div>
         </div>
 
-        {/* Bottom bar — thin gold divider */}
+        {/* Bottom bar */}
         <div className="border-t border-nilium-gold/20 pt-6 text-center">
           <p className="text-white/30 text-xs font-body tracking-wide">
             {t['footer.rights']}
