@@ -1,3 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /privacy
+Disallow: /cookies
+Disallow: /impressum
+Disallow: /terms
 Sitemap: https://nilium-app-2026-seven.vercel.app/sitemap.xml

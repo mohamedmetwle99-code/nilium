@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Navigation } from './Navigation';
 import { Footer } from './Footer';
 import { LegalModal } from './LegalModal';
@@ -23,6 +23,21 @@ export const LegalPageLayout: React.FC<Props> = ({
 }) => {
   const [currency, setCurrency] = useState<Currency>('CHF');
   const [legalModal, setLegalModal] = useState<LegalPage | null>(null);
+
+  useEffect(() => {
+    let metaRobots = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+    if (!metaRobots) {
+      metaRobots = document.createElement('meta');
+      metaRobots.setAttribute('name', 'robots');
+      document.head.appendChild(metaRobots);
+    }
+    metaRobots.setAttribute('content', 'noindex, nofollow');
+
+    return () => {
+      const tag = document.querySelector('meta[name="robots"]') as HTMLMetaElement | null;
+      if (tag) tag.setAttribute('content', 'index, follow');
+    };
+  }, []);
 
   const handleNav = (href: string) => {
     window.location.href = href.startsWith('#') ? `/${href}` : href;
