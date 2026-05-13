@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LegalPageLayout } from '../components/LegalPageLayout';
 import type { Language } from '../i18n';
+import { detectLanguage } from '../i18n';
 
 const h2 = 'text-2xl md:text-3xl font-display text-nile-dark mt-12 mb-4';
 const h3 = 'text-lg md:text-xl font-display text-nile-dark mt-8 mb-3';
@@ -459,8 +460,240 @@ function PrivacyDE() {
   );
 }
 
+function PrivacyFR() {
+  return (
+    <>
+      <h2 className={h2}>Introduction</h2>
+      <p className={p}>
+        La présente politique de confidentialité pour Nilium (« nous », « notre ») décrit comment et
+        pourquoi nous pouvons accéder, collecter, stocker, utiliser et/ou partager (« traiter ») vos
+        informations personnelles lorsque vous utilisez nos services, notamment lorsque vous :
+      </p>
+      <ul className={ul}>
+        <li className={li}>
+          Visitez notre site web à l'adresse{' '}
+          <a href="https://nilium-sandy.vercel.app" className={a}>
+            https://nilium-sandy.vercel.app
+          </a>{' '}
+          ou tout autre site web de notre part qui renvoie à la présente politique de confidentialité
+        </li>
+        <li className={li}>Utilisez nos produits : bougies en cire de soja Nilium et sachets parfumés</li>
+        <li className={li}>
+          Interagissez avec nous d'autres manières connexes, y compris dans le cadre de toute
+          action marketing ou événement
+        </li>
+      </ul>
+      <p className={p}>
+        <strong className={strong}>Des questions ou des préoccupations ?</strong> La lecture de
+        cette politique de confidentialité vous aidera à comprendre vos droits et vos choix en
+        matière de confidentialité. Nous sommes responsables des décisions concernant le traitement
+        de vos informations personnelles. Si vous n'acceptez pas nos politiques et pratiques,
+        veuillez ne pas utiliser nos services. Si vous avez encore des questions ou des
+        préoccupations, veuillez nous contacter à{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>
+        .
+      </p>
+
+      <h2 className={h2}>1. Quelles informations collectons-nous ?</h2>
+      <h3 className={h3}>Informations personnelles que vous nous communiquez</h3>
+      <p className={p}>
+        <strong className={strong}><em>En bref :</em></strong>{' '}
+        <em>Nous collectons les informations personnelles que vous nous fournissez.</em>
+      </p>
+      <p className={p}>
+        Nous collectons les informations personnelles que vous nous fournissez volontairement
+        lorsque vous manifestez un intérêt pour l'obtention d'informations sur nous ou nos produits
+        et services, lorsque vous participez à des activités sur les services, ou lorsque vous nous
+        contactez.
+      </p>
+      <p className={p}>
+        <strong className={strong}>Informations personnelles fournies par vous.</strong> Les
+        informations personnelles que nous collectons dépendent du contexte de vos interactions avec
+        nous et les services. Les informations personnelles que nous collectons peuvent inclure :
+      </p>
+      <ul className={ul}>
+        <li className={li}>Noms</li>
+        <li className={li}>Numéros de téléphone</li>
+        <li className={li}>Adresses e-mail</li>
+        <li className={li}>Adresses de facturation</li>
+        <li className={li}>Adresses postales</li>
+        <li className={li}>Numéros de carte de débit/crédit</li>
+        <li className={li}>Données de contact ou d'authentification</li>
+        <li className={li}>Préférences de contact</li>
+      </ul>
+      <p className={p}>
+        <strong className={strong}>Informations sensibles.</strong> Nous ne traitons pas
+        d'informations sensibles.
+      </p>
+      <p className={p}>
+        <strong className={strong}>Données de paiement.</strong> Nous pouvons collecter les données
+        nécessaires au traitement de votre paiement si vous effectuez des achats, telles que le
+        numéro de votre instrument de paiement et le code de sécurité associé. Toutes les données de
+        paiement sont gérées et stockées par Stripe. Vous pouvez consulter leur politique de
+        confidentialité ici :{' '}
+        <a href="https://stripe.com/privacy" className={a} target="_blank" rel="noopener noreferrer">
+          https://stripe.com/privacy
+        </a>
+        .
+      </p>
+      <p className={p}>
+        Toutes les informations personnelles que vous nous fournissez doivent être véridiques,
+        complètes et exactes, et vous devez nous informer de tout changement.
+      </p>
+
+      <h2 className={h2}>2. Comment traitons-nous vos informations ?</h2>
+      <p className={p}>
+        <strong className={strong}><em>En bref :</em></strong>{' '}
+        <em>
+          Nous traitons vos informations pour fournir, améliorer et administrer nos services,
+          communiquer avec vous, assurer la sécurité et prévenir la fraude, et respecter la loi.
+        </em>
+      </p>
+      <p className={p}>Nous traitons vos informations personnelles pour diverses raisons :</p>
+      <ul className={ul}>
+        <li className={li}>
+          <strong className={strong}>Pour fournir et faciliter la prestation de services.</strong>{' '}
+          Nous pouvons traiter vos informations pour vous fournir le service demandé.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Pour répondre aux demandes des utilisateurs.</strong> Nous
+          pouvons traiter vos informations pour répondre à vos demandes et résoudre tout problème
+          potentiel.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Pour vous envoyer des informations administratives.</strong>{' '}
+          Nous pouvons traiter vos informations pour vous envoyer des détails sur nos produits et
+          services, des modifications de nos conditions et politiques.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Pour protéger les intérêts vitaux d'une personne.</strong>{' '}
+          Nous pouvons traiter vos informations lorsque cela est nécessaire pour protéger les
+          intérêts vitaux d'une personne, par exemple pour prévenir un préjudice.
+        </li>
+      </ul>
+
+      <h2 className={h2}>3. Sur quelles bases juridiques nous appuyons-nous ?</h2>
+      <p className={p}>
+        Le RGPD et le UK GDPR nous demandent d'expliquer les bases juridiques valides sur lesquelles
+        nous nous appuyons :
+      </p>
+      <ul className={ul}>
+        <li className={li}>
+          <strong className={strong}>Consentement.</strong> Nous pouvons traiter vos informations
+          si vous nous avez donné la permission d'utiliser vos informations personnelles à des fins
+          spécifiques. Vous pouvez retirer votre consentement à tout moment.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Exécution d'un contrat.</strong> Nous pouvons traiter vos
+          informations personnelles lorsque cela est nécessaire pour remplir nos obligations
+          contractuelles, notamment la fourniture de nos services.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Obligations légales.</strong> Nous pouvons traiter vos
+          informations lorsque cela est nécessaire pour respecter nos obligations légales.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Intérêts vitaux.</strong> Nous pouvons traiter vos
+          informations lorsque cela est nécessaire pour protéger vos intérêts vitaux ou ceux d'un
+          tiers.
+        </li>
+      </ul>
+
+      <h2 className={h2}>4. Quand partageons-nous vos informations ?</h2>
+      <p className={p}>Nous pouvons partager des informations dans des situations spécifiques :</p>
+      <ul className={ul}>
+        <li className={li}>
+          <strong className={strong}>Transferts d'entreprise.</strong> Nous pouvons partager ou
+          transférer vos informations dans le cadre d'une fusion, d'une vente d'actifs, d'un
+          financement ou d'une acquisition.
+        </li>
+        <li className={li}>
+          <strong className={strong}>Prestataires de services.</strong> Nous pouvons partager vos
+          données avec Stripe (paiements) et Klaviyo (marketing par e-mail) pour exploiter nos
+          services.
+        </li>
+      </ul>
+
+      <h2 className={h2}>5. Utilisons-nous des cookies ?</h2>
+      <p className={p}>
+        Oui. Nous utilisons des cookies et des technologies de suivi similaires. Pour plus de
+        détails, consultez notre{' '}
+        <a href="/cookies" className={a}>Politique des cookies</a>.
+      </p>
+
+      <h2 className={h2}>6. Combien de temps conservons-nous vos informations ?</h2>
+      <p className={p}>
+        Nous conservons vos informations personnelles aussi longtemps que nécessaire pour atteindre
+        les objectifs décrits dans la présente politique de confidentialité, sauf si une période de
+        conservation plus longue est requise par la loi (comme pour les exigences fiscales ou
+        comptables).
+      </p>
+
+      <h2 className={h2}>7. Comment sécurisons-nous vos informations ?</h2>
+      <p className={p}>
+        Nous avons mis en place des mesures de sécurité techniques et organisationnelles appropriées
+        pour protéger vos informations personnelles. Cependant, aucune transmission électronique sur
+        Internet ne peut être garantie à 100 % sécurisée.
+      </p>
+
+      <h2 className={h2}>8. Quels sont vos droits en matière de confidentialité ?</h2>
+      <p className={p}>
+        Dans certaines régions (comme l'EEE, le Royaume-Uni et la Suisse), vous disposez de droits
+        en vertu des lois sur la protection des données. Ceux-ci peuvent inclure le droit de :
+        (i) demander l'accès et obtenir une copie de vos informations personnelles, (ii) demander
+        la rectification ou l'effacement, (iii) restreindre le traitement, (iv) la portabilité des
+        données, et (v) ne pas être soumis à une prise de décision automatisée.
+      </p>
+      <p className={p}>
+        Pour exercer vos droits, contactez-nous à{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>
+        .
+      </p>
+      <p className={p}>
+        Si vous êtes situé en Suisse, vous pouvez contacter le{' '}
+        <a
+          href="https://www.edoeb.admin.ch/edoeb/en/home.html"
+          className={a}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Préposé fédéral à la protection des données et à la transparence
+        </a>
+        .
+      </p>
+
+      <h2 className={h2}>9. Mettons-nous à jour cet avis ?</h2>
+      <p className={p}>
+        Nous pouvons mettre à jour cette politique de confidentialité de temps à autre. La version
+        mise à jour sera indiquée par une date de « Dernière mise à jour » actualisée en haut de
+        cette politique.
+      </p>
+
+      <h2 className={h2}>10. Comment pouvez-vous nous contacter ?</h2>
+      <p className={p}>
+        Si vous avez des questions ou des commentaires sur cet avis, vous pouvez nous envoyer un
+        e-mail à{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>{' '}
+        ou nous contacter par courrier à :
+      </p>
+      <p className={p}>
+        Nilium<br />
+        Bodenackerweg 4<br />
+        3053 Bern<br />
+        Suisse
+      </p>
+    </>
+  );
+}
+
 export const PrivacyPolicy: React.FC<{ lang: Language }> = ({ lang: initialLang }) => {
-  const [lang, setLang] = useState<Language>(initialLang);
+  const [lang, setLang] = useState<Language>(initialLang ?? detectLanguage());
 
   const handleLangChange = (l: Language) => {
     setLang(l);
@@ -469,12 +702,12 @@ export const PrivacyPolicy: React.FC<{ lang: Language }> = ({ lang: initialLang 
 
   return (
     <LegalPageLayout
-      title={{ en: 'Privacy Policy', de: 'Datenschutzerklärung' }}
-      lastUpdated={{ en: 'May 13, 2026', de: '13. Mai 2026' }}
+      title={{ en: 'Privacy Policy', de: 'Datenschutzerklärung', fr: 'Politique de confidentialité' }}
+      lastUpdated={{ en: 'May 13, 2026', de: '13. Mai 2026', fr: '13 mai 2026' }}
       lang={lang}
       onLangChange={handleLangChange}
     >
-      {lang === 'de' ? <PrivacyDE /> : <PrivacyEN />}
+      {lang === 'de' ? <PrivacyDE /> : lang === 'fr' ? <PrivacyFR /> : <PrivacyEN />}
     </LegalPageLayout>
   );
 };

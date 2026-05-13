@@ -19,10 +19,10 @@ import type { LegalPage } from './components/LegalModal';
 import { ToastProvider } from './components/Toast';
 import { MiniCartPopup } from './components/MiniCartPopup';
 import { ScrollToTop } from './components/ScrollToTop';
-import { translations } from './i18n';
+import { translations, detectLanguage } from './i18n';
 
 const AppInner: React.FC = () => {
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLang] = useState<Language>(detectLanguage);
   const [cartOpen, setCartOpen] = useState(false);
   const [legalModal, setLegalModal] = useState<LegalPage | null>(null);
   const [miniCartOpen, setMiniCartOpen] = useState(false);

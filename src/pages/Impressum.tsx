@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { LegalPageLayout } from '../components/LegalPageLayout';
 import type { Language } from '../i18n';
+import { detectLanguage } from '../i18n';
 
 const h2 = 'text-2xl md:text-3xl font-display text-nile-dark mt-12 mb-4';
 const p = 'text-nile-dark/80 font-body text-base leading-relaxed mb-4';
@@ -126,8 +127,69 @@ function ImpressumDE() {
   );
 }
 
+function ImpressumFR() {
+  return (
+    <>
+      <h2 className={h2}>Exploitant du site web</h2>
+      <p className={p}>
+        Nilium<br />
+        Entreprise individuelle (Einzelfirma)<br />
+        Bodenackerweg 4<br />
+        3053 Bern<br />
+        Suisse
+      </p>
+
+      <h2 className={h2}>Contact</h2>
+      <p className={p}>
+        E-mail :{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>
+      </p>
+
+      <h2 className={h2}>Responsable du contenu</h2>
+      <p className={p}>Diana (Propriétaire)<br />Adresse comme ci-dessus.</p>
+
+      <h2 className={h2}>Avis de non-responsabilité</h2>
+      <p className={p}>
+        L'auteur n'assume aucune responsabilité quant à l'exactitude, la précision, l'actualité,
+        la fiabilité ou l'exhaustivité des informations fournies. Les demandes de responsabilité
+        pour dommages matériels ou immatériels résultant de l'accès ou de l'utilisation ou de la
+        non-utilisation des informations publiées, ou résultant de l'utilisation d'informations
+        incorrectes ou incomplètes, sont exclues.
+      </p>
+      <p className={p}>
+        Toutes les offres sont sans engagement. L'auteur se réserve expressément le droit de
+        modifier, compléter ou supprimer des parties des pages ou l'ensemble de l'offre sans
+        préavis, ou d'interrompre temporairement ou définitivement leur publication.
+      </p>
+
+      <h2 className={h2}>Responsabilité pour les liens</h2>
+      <p className={p}>
+        Les références et les liens vers des sites web tiers échappent à notre domaine de
+        responsabilité. Nous déclinons toute responsabilité pour ces sites web. L'accès et
+        l'utilisation de ces sites web se font aux risques et périls de l'utilisateur.
+      </p>
+
+      <h2 className={h2}>Droits d'auteur</h2>
+      <p className={p}>
+        Les droits d'auteur et tous les autres droits sur les contenus, images, photos ou autres
+        fichiers de ce site web appartiennent exclusivement à Nilium ou aux détenteurs de droits
+        spécifiquement nommés. Une autorisation écrite doit être obtenue préalablement à la
+        reproduction de tout élément.
+      </p>
+
+      <h2 className={h2}>Droit applicable et juridiction</h2>
+      <p className={p}>
+        Les présentes mentions légales et toutes les questions juridiques y afférentes sont
+        exclusivement régies par le droit suisse. Le for exclusif est Berne, Suisse.
+      </p>
+    </>
+  );
+}
+
 export const Impressum: React.FC<{ lang: Language }> = ({ lang: initialLang }) => {
-  const [lang, setLang] = useState<Language>(initialLang);
+  const [lang, setLang] = useState<Language>(initialLang ?? detectLanguage());
 
   const handleLangChange = (l: Language) => {
     setLang(l);
@@ -136,12 +198,12 @@ export const Impressum: React.FC<{ lang: Language }> = ({ lang: initialLang }) =
 
   return (
     <LegalPageLayout
-      title={{ en: 'Legal Notice (Impressum)', de: 'Impressum' }}
-      lastUpdated={{ en: 'May 13, 2026', de: '13. Mai 2026' }}
+      title={{ en: 'Legal Notice (Impressum)', de: 'Impressum', fr: 'Mentions légales' }}
+      lastUpdated={{ en: 'May 13, 2026', de: '13. Mai 2026', fr: '13 mai 2026' }}
       lang={lang}
       onLangChange={handleLangChange}
     >
-      {lang === 'de' ? <ImpressumDE /> : <ImpressumEN />}
+      {lang === 'de' ? <ImpressumDE /> : lang === 'fr' ? <ImpressumFR /> : <ImpressumEN />}
     </LegalPageLayout>
   );
 };

@@ -7,12 +7,18 @@ import type { Language } from '../i18n';
 import type { Currency } from '../store';
 
 interface Props {
-  title: { en: string; de: string };
-  lastUpdated: { en: string; de: string };
+  title: { en: string; de: string; fr: string };
+  lastUpdated: { en: string; de: string; fr: string };
   lang: Language;
   onLangChange: (lang: Language) => void;
   children: React.ReactNode;
 }
+
+const lastUpdatedLabel: Record<Language, string> = {
+  en: 'Last updated:',
+  de: 'Zuletzt aktualisiert:',
+  fr: 'Dernière mise à jour :',
+};
 
 export const LegalPageLayout: React.FC<Props> = ({
   title,
@@ -43,6 +49,16 @@ export const LegalPageLayout: React.FC<Props> = ({
     window.location.href = href.startsWith('#') ? `/${href}` : href;
   };
 
+  const shippingTitle =
+    lang === 'de' ? 'Versand & Retouren' :
+    lang === 'fr' ? 'Livraison et retours' :
+    'Shipping & Returns';
+
+  const shippingBody =
+    lang === 'de' ? 'Informationen zu Versand & Retouren folgen in Kürze. Bei Fragen wenden Sie sich bitte an nilium.official@gmail.com.' :
+    lang === 'fr' ? 'Les informations sur la livraison et les retours seront disponibles prochainement. Pour toute question, contactez-nous à nilium.official@gmail.com.' :
+    'Shipping & Returns information is coming soon. For questions, please contact nilium.official@gmail.com.';
+
   return (
     <div className="bg-cream min-h-screen">
       <Navigation
@@ -62,7 +78,7 @@ export const LegalPageLayout: React.FC<Props> = ({
             {title[lang]}
           </h1>
           <p className="text-solar/70 italic font-display text-sm mt-4">
-            {lang === 'en' ? 'Last updated:' : 'Zuletzt aktualisiert:'} {lastUpdated[lang]}
+            {lastUpdatedLabel[lang]} {lastUpdated[lang]}
           </p>
         </div>
       </div>
@@ -77,12 +93,10 @@ export const LegalPageLayout: React.FC<Props> = ({
       <LegalModal
         open={legalModal !== null}
         onClose={() => setLegalModal(null)}
-        title={lang === 'en' ? 'Shipping & Returns' : 'Versand & Retouren'}
+        title={shippingTitle}
       >
         <p className="text-nile-dark/70 font-body leading-relaxed">
-          {lang === 'en'
-            ? 'Shipping & Returns information is coming soon. For questions, please contact nilium.official@gmail.com.'
-            : 'Informationen zu Versand & Retouren folgen in Kürze. Bei Fragen wenden Sie sich bitte an nilium.official@gmail.com.'}
+          {shippingBody}
         </p>
       </LegalModal>
     </div>

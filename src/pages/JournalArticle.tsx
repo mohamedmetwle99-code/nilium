@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ChevronLeft } from 'lucide-react';
 import type { Language } from '../i18n';
-import { translations } from '../i18n';
+import { translations, detectLanguage } from '../i18n';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { LegalModal } from '../components/LegalModal';
@@ -12,9 +12,7 @@ import type { Currency } from '../store';
 interface Props { slug: string; }
 
 export const JournalArticle: React.FC<Props> = ({ slug }) => {
-  const [lang, setLang] = useState<Language>(
-    (localStorage.getItem('nilium-lang') as Language) || 'en'
-  );
+  const [lang, setLang] = useState<Language>(detectLanguage);
   const [currency, setCurrency] = useState<Currency>('CHF');
   const [legalModal, setLegalModal] = useState<LegalPage | null>(null);
   const t = translations[lang];
@@ -31,7 +29,7 @@ export const JournalArticle: React.FC<Props> = ({ slug }) => {
   };
 
   const formatDate = (dateStr: string) =>
-    new Date(dateStr).toLocaleDateString(lang === 'de' ? 'de-CH' : 'en-GB', {
+    new Date(dateStr).toLocaleDateString(lang === 'de' ? 'de-CH' : lang === 'fr' ? 'fr-CH' : 'en-GB', {
       year: 'numeric', month: 'long', day: 'numeric',
     });
 

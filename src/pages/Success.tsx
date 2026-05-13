@@ -1,10 +1,9 @@
 import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
-import type { Language } from '../i18n';
-import { translations } from '../i18n';
+import { translations, detectLanguage } from '../i18n';
 
 export const Success: React.FC = () => {
-  const lang = (localStorage.getItem('lang') === 'de' ? 'de' : 'en') as Language;
+  const lang = detectLanguage();
   const t = translations[lang];
 
   const sessionId = useMemo(() => {

@@ -10,13 +10,12 @@ import { JournalArticle } from './pages/JournalArticle';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { CookiePolicy } from './pages/CookiePolicy';
 import { Impressum } from './pages/Impressum';
-import type { Language } from './i18n';
+import { detectLanguage } from './i18n';
 
 const path = window.location.pathname;
 const root = createRoot(document.getElementById('root')!);
 
-const savedLang = localStorage.getItem('nilium-lang') as Language | null;
-const lang: Language = savedLang === 'de' ? 'de' : 'en';
+const lang = detectLanguage();
 
 if (path === '/success') {
   root.render(<StrictMode><Success /></StrictMode>);
