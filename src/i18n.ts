@@ -263,6 +263,11 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.navigate': 'Navigate',
     'footer.support': 'Support',
     'footer.collections': 'Collections',
+
+    'footer.legal.privacy': 'Privacy Policy',
+    'footer.legal.cookies': 'Cookie Policy',
+    'footer.legal.terms': 'Terms of Service',
+    'footer.legal.impressum': 'Impressum',
   },
 
   de: {
@@ -527,5 +532,10 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.navigate': 'Navigation',
     'footer.support': 'Support',
     'footer.collections': 'Kollektionen',
+
+    'footer.legal.privacy': 'Datenschutzerklärung',
+    'footer.legal.cookies': 'Cookie-Richtlinie',
+    'footer.legal.terms': 'Nutzungsbedingungen',
+    'footer.legal.impressum': 'Impressum',
   },
 };

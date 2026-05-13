@@ -7,9 +7,16 @@ import { Cancel } from './pages/Cancel';
 import { NotFound } from './pages/NotFound';
 import { Journal } from './pages/Journal';
 import { JournalArticle } from './pages/JournalArticle';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { CookiePolicy } from './pages/CookiePolicy';
+import { Impressum } from './pages/Impressum';
+import type { Language } from './i18n';
 
 const path = window.location.pathname;
 const root = createRoot(document.getElementById('root')!);
+
+const savedLang = localStorage.getItem('nilium-lang') as Language | null;
+const lang: Language = savedLang === 'de' ? 'de' : 'en';
 
 if (path === '/success') {
   root.render(<StrictMode><Success /></StrictMode>);
@@ -20,6 +27,12 @@ if (path === '/success') {
 } else if (path.startsWith('/journal/')) {
   const slug = path.split('/').filter(Boolean)[1];
   root.render(<StrictMode><JournalArticle slug={slug} /></StrictMode>);
+} else if (path === '/privacy') {
+  root.render(<StrictMode><PrivacyPolicy lang={lang} /></StrictMode>);
+} else if (path === '/cookies') {
+  root.render(<StrictMode><CookiePolicy lang={lang} /></StrictMode>);
+} else if (path === '/impressum') {
+  root.render(<StrictMode><Impressum lang={lang} /></StrictMode>);
 } else if (path === '/' || path === '') {
   root.render(<StrictMode><App /></StrictMode>);
 } else {

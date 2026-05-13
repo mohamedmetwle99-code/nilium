@@ -4,6 +4,10 @@ import type { Language } from '../i18n';
 import { translations } from '../i18n';
 import type { LegalPage } from './LegalModal';
 
+type FooterLegalLink =
+  | { label: string; href: string }
+  | { label: string; page: LegalPage };
+
 interface Props {
   lang: Language;
   onLegalOpen: (page: LegalPage) => void;
@@ -20,12 +24,12 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
     { label: t['nav.contact'],        href: '#contact' },
   ];
 
-  const legalLinks: { label: string; page: LegalPage }[] = [
-    { label: t['footer.shipping'],   page: 'shipping' },
-    { label: t['footer.privacy'],    page: 'privacy' },
-    { label: t['footer.terms'],      page: 'terms' },
-    { label: t['footer.cookies'],    page: 'cookies' },
-    { label: t['footer.impressum'],  page: 'impressum' },
+  const legalLinks: FooterLegalLink[] = [
+    { label: t['footer.shipping'],          page: 'shipping' },
+    { label: t['footer.legal.privacy'],     href: '/privacy' },
+    { label: t['footer.legal.terms'],       href: '/terms' },
+    { label: t['footer.legal.cookies'],     href: '/cookies' },
+    { label: t['footer.legal.impressum'],   href: '/impressum' },
   ];
 
   const socials = [
@@ -91,13 +95,22 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
             </h4>
             <ul className="space-y-3">
               {legalLinks.map(link => (
-                <li key={link.page}>
-                  <button
-                    onClick={() => onLegalOpen(link.page)}
-                    className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors text-left"
-                  >
-                    {link.label}
-                  </button>
+                <li key={'href' in link ? link.href : link.page}>
+                  {'href' in link ? (
+                    <a
+                      href={link.href}
+                      className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <button
+                      onClick={() => onLegalOpen(link.page)}
+                      className="text-white/50 hover:text-nilium-gold text-sm font-body transition-colors text-left"
+                    >
+                      {link.label}
+                    </button>
+                  )}
                 </li>
               ))}
             </ul>
