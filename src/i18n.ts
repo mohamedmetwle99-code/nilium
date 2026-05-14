@@ -308,6 +308,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.error.invalid': 'Please enter a valid email',
     'newsletter.error.generic': 'Something went wrong. Please try again.',
     'newsletter.error.network': 'Network error. Please try again.',
+
+    'story.page.eyebrow': 'Our Story',
+    'story.page.title': 'A Life Between Worlds',
   },
 
   de: {
@@ -606,6 +609,9 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.error.invalid': 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
     'newsletter.error.generic': 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
     'newsletter.error.network': 'Netzwerkfehler. Bitte versuchen Sie es erneut.',
+
+    'story.page.eyebrow': 'Unsere Geschichte',
+    'story.page.title': 'Ein Leben Zwischen Welten',
   },
 
   fr: {
@@ -904,5 +910,8 @@ export const translations: Record<Language, Record<string, string>> = {
     'newsletter.error.invalid': 'Veuillez saisir une adresse e-mail valide.',
     'newsletter.error.generic': 'Une erreur s\'est produite. Veuillez réessayer.',
     'newsletter.error.network': 'Erreur réseau. Veuillez réessayer.',
+
+    'story.page.eyebrow': 'Notre Histoire',
+    'story.page.title': 'Une Vie Entre les Mondes',
   },
 };

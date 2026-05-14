@@ -28,7 +28,7 @@ function ImpressumEN() {
       </p>
 
       <h2 className={h2}>Responsible for Content</h2>
-      <p className={p}>Diana (Owner)<br />Address as above.</p>
+      <p className={p}>M. Atteya (Owner)<br />Address as above.</p>
 
       <h2 className={h2}>Disclaimer</h2>
       <p className={p}>
@@ -129,7 +129,7 @@ function ImpressumDE() {
       </p>
 
       <h2 className={h2}>Verantwortlich für den Inhalt</h2>
-      <p className={p}>Diana (Inhaberin)<br />Adresse wie oben.</p>
+      <p className={p}>M. Atteya (Inhaber)<br />Adresse wie oben.</p>
 
       <h2 className={h2}>Haftungsausschluss</h2>
       <p className={p}>
@@ -237,7 +237,7 @@ function ImpressumFR() {
       </p>
 
       <h2 className={h2}>Responsable du contenu</h2>
-      <p className={p}>Diana (Propriétaire)<br />Adresse comme ci-dessus.</p>
+      <p className={p}>M. Atteya (Propriétaire)<br />Adresse comme ci-dessus.</p>
 
       <h2 className={h2}>Avis de non-responsabilité</h2>
       <p className={p}>

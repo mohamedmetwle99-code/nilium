@@ -19,7 +19,7 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
   const navigateLinks = [
     { label: t['nav.home'],           href: '#home' },
     { label: t['footer.collections'], href: '#shop' },
-    { label: t['nav.story'],          href: '#story' },
+    { label: t['nav.story'],          href: '/story' },
     { label: t['nav.journal'],        href: '/journal' },
     { label: t['nav.contact'],        href: '#contact' },
   ];

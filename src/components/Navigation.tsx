@@ -45,7 +45,7 @@ export const Navigation: React.FC<Props> = ({
   const navItems = [
     { key: 'nav.home', href: '#home' },
     { key: 'nav.shop', href: '#shop' },
-    { key: 'nav.story', href: '#story' },
+    { key: 'nav.story', href: '/story' },
     { key: 'nav.howItWorks', href: '#howto' },
     { key: 'nav.journal', href: '/journal' },
     { key: 'nav.contact', href: '#contact' },
