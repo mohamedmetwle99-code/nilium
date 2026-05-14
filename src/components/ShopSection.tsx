@@ -176,14 +176,14 @@ export const ShopSection: React.FC<Props> = ({ lang, formatPrice, onAddToCart })
   const filtered = filter === 'all' ? products : products.filter(p => p.collection === filter);
 
   return (
-    <section id="shop" className="relative py-24 md:py-32 bg-cream">
+    <section id="shop" className="relative py-28 md:py-36 bg-cream">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-solar/20 to-transparent" />
       <div className="max-w-7xl mx-auto px-5" ref={ref}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14 md:mb-16"
         >
           <span className="text-solar text-[11px] tracking-[0.4em] uppercase font-accent font-light">
             — {t['featured.label']} —
@@ -201,7 +201,7 @@ export const ShopSection: React.FC<Props> = ({ lang, formatPrice, onAddToCart })
           initial={{ opacity: 0, y: 15 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.2, duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-2 mb-12"
+          className="flex flex-wrap justify-center gap-2 mb-14"
         >
           {collections.map((c) => (
             <button
@@ -218,7 +218,7 @@ export const ShopSection: React.FC<Props> = ({ lang, formatPrice, onAddToCart })
           ))}
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
           {filtered.map((product, i) => (
             <ProductCard
               key={product.id}

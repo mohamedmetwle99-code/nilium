@@ -46,7 +46,7 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
   };
 
   return (
-    <section className="relative py-20 md:py-28 bg-nile text-cream overflow-hidden">
+    <section className="relative py-24 md:py-32 bg-nile text-cream overflow-hidden">
       <div className="absolute inset-0 opacity-[0.04]" style={{
         backgroundImage: `radial-gradient(circle at 30% 50%, rgba(212,175,55,0.2), transparent 60%), radial-gradient(circle at 70% 50%, rgba(212,175,55,0.15), transparent 50%)`
       }} />
@@ -60,7 +60,7 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
           <h2 className="text-4xl md:text-5xl font-display font-normal text-cream tracking-wide mb-4">
             {t['newsletter.title']}
           </h2>
-          <p className="text-cream/45 font-body font-light text-sm leading-relaxed mb-8">
+          <p className="text-cream/45 font-body font-light text-sm leading-loose mb-10">
             {t['newsletter.desc']}
           </p>
           <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">

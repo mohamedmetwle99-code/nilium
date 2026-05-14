@@ -64,8 +64,8 @@ export const Navigation: React.FC<Props> = ({
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-nile-dark/95 backdrop-blur-md py-3 shadow-lg shadow-black/20'
-          : 'bg-transparent py-5'
+          ? 'bg-nile-dark/95 backdrop-blur-md py-4 shadow-lg shadow-black/20'
+          : 'bg-transparent py-6'
       }`}>
         <div className="max-w-7xl mx-auto px-5 flex items-center justify-between">
           {/* Logo */}
@@ -75,13 +75,13 @@ export const Navigation: React.FC<Props> = ({
           </a>
 
           {/* Desktop nav */}
-          <div className="hidden lg:flex items-center gap-7">
+          <div className="hidden lg:flex items-center gap-5">
             {navItems.map((item) => (
               <a
                 key={item.key}
                 href={item.href}
                 onClick={() => handleNav(item.href)}
-                className="text-cream/60 hover:text-solar text-[11px] tracking-[0.18em] uppercase font-accent font-light transition-colors duration-300"
+                className="text-cream/50 hover:text-solar text-[10.5px] tracking-[0.16em] uppercase font-accent font-light transition-colors duration-300"
               >
                 {t[item.key]}
               </a>
@@ -90,24 +90,29 @@ export const Navigation: React.FC<Props> = ({
 
           {/* Right controls */}
           <div className="flex items-center gap-3">
-            {/* Currency */}
-            <div className="hidden sm:flex items-center gap-1 text-[10px] tracking-wider font-accent">
-              {(['CHF', 'EUR'] as Currency[]).map((c, i) => (
-                <React.Fragment key={c}>
-                  {i > 0 && <span className="text-cream/20">|</span>}
-                  <button
-                    onClick={() => onCurrencyChange(c)}
-                    className={`px-1 transition-colors ${currency === c ? 'text-solar' : 'text-cream/40 hover:text-cream/70'}`}
-                  >
-                    {c}
-                  </button>
-                </React.Fragment>
-              ))}
-            </div>
+            {/* Thin divider — separates nav from settings group */}
+            <div className="hidden lg:block w-px h-4 bg-cream/15 mx-1" />
 
-            {/* Language */}
-            <div className="text-cream hidden sm:block">
-              <LanguageSwitcher current={lang} onChange={onLangChange} />
+            {/* Currency + Language grouped */}
+            <div className="hidden sm:flex items-center gap-2">
+              {/* Currency */}
+              <div className="flex items-center gap-0.5 text-[9.5px] tracking-wider font-accent">
+                {(['CHF', 'EUR'] as Currency[]).map((c, i) => (
+                  <React.Fragment key={c}>
+                    {i > 0 && <span className="text-cream/15">|</span>}
+                    <button
+                      onClick={() => onCurrencyChange(c)}
+                      className={`px-1 transition-colors ${currency === c ? 'text-solar' : 'text-cream/35 hover:text-cream/60'}`}
+                    >
+                      {c}
+                    </button>
+                  </React.Fragment>
+                ))}
+              </div>
+              {/* Language */}
+              <div className="text-cream">
+                <LanguageSwitcher current={lang} onChange={onLangChange} />
+              </div>
             </div>
 
             {/* Cart */}

@@ -12,7 +12,7 @@ export const ContactSection: React.FC<Props> = ({ lang }) => {
   const inView = useInView(ref, { once: true, margin: '-80px' });
 
   return (
-    <section id="contact" className="relative py-24 md:py-32 bg-cream">
+    <section id="contact" className="relative py-28 md:py-36 bg-cream">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-solar/20 to-transparent" />
 
       <div className="max-w-5xl mx-auto px-5" ref={ref}>
@@ -20,7 +20,7 @@ export const ContactSection: React.FC<Props> = ({ lang }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16 md:mb-20"
         >
           <span className="text-solar text-[11px] tracking-[0.4em] uppercase font-accent font-light">
             — {t['contact.label']} —

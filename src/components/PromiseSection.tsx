@@ -6,16 +6,16 @@ import { translations } from '../i18n';
 interface Props { lang: Language; }
 
 const columns = [
-  { icon: '/icons/icon-purity.png', titleKey: 'promise.purity.title', descKey: 'promise.purity.desc' },
-  { icon: '/icons/icon-scent-journey.png', titleKey: 'promise.journey.title', descKey: 'promise.journey.desc' },
-  { icon: '/icons/icon-sustainable.png', titleKey: 'promise.sustainable.title', descKey: 'promise.sustainable.desc' },
+  { icon: '/icons/icon-purity.jpg', titleKey: 'promise.purity.title', descKey: 'promise.purity.desc' },
+  { icon: '/icons/icon-scent-journey.jpg', titleKey: 'promise.journey.title', descKey: 'promise.journey.desc' },
+  { icon: '/icons/icon-sustainable.jpg', titleKey: 'promise.sustainable.title', descKey: 'promise.sustainable.desc' },
 ];
 
 export const PromiseSection: React.FC<Props> = ({ lang }) => {
   const t = translations[lang];
 
   return (
-    <section className="relative py-20 md:py-28 bg-cream">
+    <section className="relative py-24 md:py-32 bg-cream">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-solar/20 to-transparent" />
 
       <div className="max-w-6xl mx-auto px-5">
@@ -34,7 +34,7 @@ export const PromiseSection: React.FC<Props> = ({ lang }) => {
           </h2>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mt-16 md:mt-20">
           {columns.map((col, i) => (
             <motion.div
               key={col.titleKey}

@@ -114,7 +114,7 @@ export const ScentQuiz: React.FC<Props> = ({ lang }) => {
   const shopCta = result === 'both' ? t['quiz.result.shop_plural'] : t['quiz.result.shop'];
 
   return (
-    <section className="relative py-20 md:py-28 bg-nile/5">
+    <section className="relative py-24 md:py-32 bg-nile/5">
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-solar/20 to-transparent" />
 
       <div className="max-w-2xl mx-auto px-5" ref={ref}>
@@ -123,7 +123,7 @@ export const ScentQuiz: React.FC<Props> = ({ lang }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14 md:mb-16"
         >
           <p className="text-solar text-xs tracking-[0.3em] uppercase font-accent mb-3">
             — {t['quiz.eyebrow']} —

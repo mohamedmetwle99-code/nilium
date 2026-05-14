@@ -56,7 +56,7 @@ export const HowItWorksSection: React.FC<Props> = ({ lang }) => {
   ];
 
   return (
-    <section id="howto" className="relative py-24 md:py-32 bg-nile-dark text-cream">
+    <section id="howto" className="relative py-28 md:py-36 bg-nile-dark text-cream">
       <div className="absolute inset-0 opacity-[0.03]" style={{
         backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 40px, rgba(212,175,55,0.15) 40px, rgba(212,175,55,0.15) 41px)`
       }} />
@@ -66,7 +66,7 @@ export const HowItWorksSection: React.FC<Props> = ({ lang }) => {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-16 md:mb-20"
         >
           <span className="text-solar text-[11px] tracking-[0.4em] uppercase font-accent font-light">
             — {t['howto.label']} —
@@ -80,7 +80,7 @@ export const HowItWorksSection: React.FC<Props> = ({ lang }) => {
         </motion.div>
 
         {/* Usage Icons Trio (matching brand kit) */}
-        <div className="grid grid-cols-3 gap-3 md:gap-5 mb-12">
+        <div className="grid grid-cols-3 gap-4 md:gap-8 mb-14">
           <UsageCard
             icon={<WardrobeIcon size={44} strokeWidth={1.3} />}
             title={t['howto.usage.sachets.title']}
