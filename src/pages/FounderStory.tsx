@@ -87,31 +87,25 @@ export const FounderStory: React.FC = () => {
 const StoryEN: React.FC = () => (
   <div className="space-y-6 text-nile-dark font-body text-base md:text-lg leading-relaxed">
     <p className="first-letter:text-5xl first-letter:font-display first-letter:text-solar first-letter:float-left first-letter:mr-2 first-letter:leading-none first-letter:mt-1">
-      NILIUM was founded by M. Atteya, an Egyptian doctor whose path crossed three countries before settling into the quiet of Switzerland.
-    </p>
-    <p>
-      Born in Egypt, he grew up surrounded by the warmth of an ancient civilization — the perfume of lotus, the rhythm of the Nile, the slow heat of stones that had stood for four thousand years.
-    </p>
-    <p>
-      In 2018, he left Egypt to study medicine in Ukraine. Four years of discipline, observation, and the careful work of learning to heal others.
-    </p>
-    <p>
-      Then, in 2022, war changed everything.
-    </p>
-    <p>
-      He came to Switzerland — a country of cold mountains and clear silence, the exact opposite of the warmth he had known. The Alps did not feel like home at first. They felt like a question.
-    </p>
-    <p>
-      But between the noise he had left behind and the stillness he had found, an idea began to take shape:
+      NILIUM is a question.
     </p>
     <p className="italic text-nile-dark/80 text-center py-4 font-display">
-      What if a candle could hold both worlds at once?
+      What if a candle could hold two ancient worlds at once?
     </p>
     <p>
-      NILIUM was born from this question.
+      The Nile — slow, warm, alive with the perfume of papyrus and lotus, the heat of stones that have stood for four thousand years.
     </p>
     <p>
-      Today, NILIUM candles are crafted in Switzerland with the same care a doctor brings to a patient: slow attention, honest materials, no shortcuts. Each candle carries echoes of older worlds — papyrus, lotus, sandalwood, bergamot — held by the Swiss precision of soy wax, clean burn, and quiet design.
+      The Alps — cold, clear, impossibly quiet. The opposite of the Nile in every way.
+    </p>
+    <p>
+      Most luxury brands choose one world. NILIUM chooses both.
+    </p>
+    <p>
+      Founded in Switzerland by M. Atteya, an Egyptian doctor whose path crossed three countries, NILIUM is shaped by contrast. Every candle is hand-poured with the discipline of the Swiss and the soul of an older civilization.
+    </p>
+    <p>
+      Crafted slowly. Made with care. Lit in silence.
     </p>
     <p>
       Where the Nile meets the Alps, NILIUM exists.
@@ -125,31 +119,25 @@ const StoryEN: React.FC = () => (
 const StoryDE: React.FC = () => (
   <div className="space-y-6 text-nile-dark font-body text-base md:text-lg leading-relaxed">
     <p className="first-letter:text-5xl first-letter:font-display first-letter:text-solar first-letter:float-left first-letter:mr-2 first-letter:leading-none first-letter:mt-1">
-      NILIUM wurde von M. Atteya gegründet, einem ägyptischen Arzt, dessen Weg drei Länder durchquerte, bevor er sich in der Stille der Schweiz niederließ.
-    </p>
-    <p>
-      Geboren in Ägypten, wuchs er umgeben von der Wärme einer alten Zivilisation auf — dem Duft von Lotus, dem Rhythmus des Nils, der langsamen Hitze von Steinen, die seit viertausend Jahren standen.
-    </p>
-    <p>
-      Im Jahr 2018 verließ er Ägypten, um in der Ukraine Medizin zu studieren. Vier Jahre der Disziplin, der Beobachtung und der sorgfältigen Arbeit zu lernen, anderen zu heilen.
-    </p>
-    <p>
-      Dann, im Jahr 2022, veränderte der Krieg alles.
-    </p>
-    <p>
-      Er kam in die Schweiz — ein Land kalter Berge und klarer Stille, das genaue Gegenteil der Wärme, die er kannte. Die Alpen fühlten sich zunächst nicht wie zu Hause an. Sie fühlten sich wie eine Frage an.
-    </p>
-    <p>
-      Aber zwischen dem Lärm, den er hinter sich gelassen hatte, und der Stille, die er gefunden hatte, begann eine Idee Gestalt anzunehmen:
+      NILIUM ist eine Frage.
     </p>
     <p className="italic text-nile-dark/80 text-center py-4 font-display">
-      Was, wenn eine Kerze beide Welten gleichzeitig halten könnte?
+      Was, wenn eine Kerze zwei alte Welten gleichzeitig halten könnte?
     </p>
     <p>
-      NILIUM wurde aus dieser Frage geboren.
+      Der Nil — langsam, warm, lebendig mit dem Duft von Papyrus und Lotus, der Hitze von Steinen, die seit viertausend Jahren stehen.
     </p>
     <p>
-      Heute werden NILIUM-Kerzen in der Schweiz mit derselben Sorgfalt gefertigt, die ein Arzt einem Patienten entgegenbringt: langsame Aufmerksamkeit, ehrliche Materialien, keine Abkürzungen. Jede Kerze trägt Echos älterer Welten — Papyrus, Lotus, Sandelholz, Bergamotte — gehalten von der Schweizer Präzision von Sojawachs, sauberem Brand und stillem Design.
+      Die Alpen — kalt, klar, unmöglich still. Das Gegenteil des Nils in jeder Hinsicht.
+    </p>
+    <p>
+      Die meisten Luxusmarken wählen eine Welt. NILIUM wählt beide.
+    </p>
+    <p>
+      Gegründet in der Schweiz von M. Atteya, einem ägyptischen Arzt, dessen Weg drei Länder durchquerte, ist NILIUM vom Kontrast geprägt. Jede Kerze wird von Hand gegossen — mit der Disziplin der Schweizer und der Seele einer älteren Zivilisation.
+    </p>
+    <p>
+      Langsam gefertigt. Mit Sorgfalt gemacht. In Stille entzündet.
     </p>
     <p>
       Wo der Nil auf die Alpen trifft, existiert NILIUM.
@@ -163,31 +151,25 @@ const StoryDE: React.FC = () => (
 const StoryFR: React.FC = () => (
   <div className="space-y-6 text-nile-dark font-body text-base md:text-lg leading-relaxed">
     <p className="first-letter:text-5xl first-letter:font-display first-letter:text-solar first-letter:float-left first-letter:mr-2 first-letter:leading-none first-letter:mt-1">
-      NILIUM a été fondé par M. Atteya, un médecin égyptien dont le chemin a traversé trois pays avant de s'installer dans le calme de la Suisse.
-    </p>
-    <p>
-      Né en Égypte, il a grandi entouré de la chaleur d'une civilisation ancienne — le parfum du lotus, le rythme du Nil, la chaleur lente de pierres qui se tenaient depuis quatre mille ans.
-    </p>
-    <p>
-      En 2018, il a quitté l'Égypte pour étudier la médecine en Ukraine. Quatre années de discipline, d'observation et du travail soigneux d'apprendre à soigner les autres.
-    </p>
-    <p>
-      Puis, en 2022, la guerre a tout changé.
-    </p>
-    <p>
-      Il est venu en Suisse — un pays de montagnes froides et de silence clair, l'exact opposé de la chaleur qu'il avait connue. Les Alpes ne se sont pas senties comme chez lui au début. Elles se sont senties comme une question.
-    </p>
-    <p>
-      Mais entre le bruit qu'il avait laissé derrière lui et l'immobilité qu'il avait trouvée, une idée a commencé à prendre forme :
+      NILIUM est une question.
     </p>
     <p className="italic text-nile-dark/80 text-center py-4 font-display">
-      Et si une bougie pouvait contenir les deux mondes à la fois ?
+      Et si une bougie pouvait contenir deux mondes anciens à la fois ?
     </p>
     <p>
-      NILIUM est né de cette question.
+      Le Nil — lent, chaud, vivant du parfum de papyrus et de lotus, de la chaleur de pierres qui se tiennent depuis quatre mille ans.
     </p>
     <p>
-      Aujourd'hui, les bougies NILIUM sont fabriquées en Suisse avec le même soin qu'un médecin apporte à un patient : attention lente, matériaux honnêtes, aucun raccourci. Chaque bougie porte des échos de mondes plus anciens — papyrus, lotus, bois de santal, bergamote — maintenus par la précision suisse de la cire de soja, d'une combustion propre et d'un design tranquille.
+      Les Alpes — froides, claires, impossiblement silencieuses. L'opposé du Nil à tous égards.
+    </p>
+    <p>
+      La plupart des marques de luxe choisissent un seul monde. NILIUM choisit les deux.
+    </p>
+    <p>
+      Fondé en Suisse par M. Atteya, un médecin égyptien dont le chemin a traversé trois pays, NILIUM est façonné par le contraste. Chaque bougie est coulée à la main — avec la discipline des Suisses et l'âme d'une civilisation plus ancienne.
+    </p>
+    <p>
+      Façonné lentement. Fait avec soin. Allumé en silence.
     </p>
     <p>
       Là où le Nil rencontre les Alpes, NILIUM existe.
