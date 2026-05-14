@@ -19,6 +19,7 @@ import type { LegalPage } from './components/LegalModal';
 import { ToastProvider } from './components/Toast';
 import { MiniCartPopup } from './components/MiniCartPopup';
 import { ScrollToTop } from './components/ScrollToTop';
+import { PromiseSection } from './components/PromiseSection';
 import { translations, detectLanguage } from './i18n';
 
 const AppInner: React.FC = () => {
@@ -58,6 +59,7 @@ const AppInner: React.FC = () => {
       <ScentQuiz lang={lang} />
       <StorySection lang={lang} />
       <PackagingSection lang={lang} />
+      <PromiseSection lang={lang} />
       <HowItWorksSection lang={lang} />
       <NewsletterSection lang={lang} />
       <ContactSection lang={lang} />

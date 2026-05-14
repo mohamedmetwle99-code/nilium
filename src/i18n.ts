@@ -311,6 +311,15 @@ export const translations: Record<Language, Record<string, string>> = {
 
     'story.page.eyebrow': 'Our Story',
     'story.page.title': 'A Life Between Worlds',
+
+    'promise.eyebrow': 'The NILIUM Promise',
+    'promise.title': 'Crafted with Intention',
+    'promise.purity.title': 'The Essence of Purity',
+    'promise.purity.desc': 'Crafted from 100% natural soy wax and infused with rare botanical essences, each NILIUM candle embodies a commitment to pristine purity and a clean, enduring burn. Experience luxury as pure as the Swiss Alps and as authentic as the Nile.',
+    'promise.journey.title': 'The Scent Journey',
+    'promise.journey.desc': 'Embark on an olfactory journey where ancient Nile spices meet crisp Alpine breezes. Each fragrance is meticulously blended to evoke memory and inspire sensation — a story of two worlds in a single flame.',
+    'promise.sustainable.title': 'Sustainable Luxury',
+    'promise.sustainable.desc': 'Indulge in luxury that respects our planet. NILIUM is dedicated to sustainable sourcing, eco-conscious packaging, and ethical practices — because true luxury is responsible luxury.',
   },
 
   de: {
@@ -612,6 +621,15 @@ export const translations: Record<Language, Record<string, string>> = {
 
     'story.page.eyebrow': 'Unsere Geschichte',
     'story.page.title': 'Ein Leben Zwischen Welten',
+
+    'promise.eyebrow': 'Das NILIUM Versprechen',
+    'promise.title': 'Mit Absicht Gefertigt',
+    'promise.purity.title': 'Die Essenz der Reinheit',
+    'promise.purity.desc': 'Gefertigt aus 100% natürlichem Sojawachs und veredelt mit seltenen botanischen Essenzen, verkörpert jede NILIUM-Kerze ein Bekenntnis zu makelloser Reinheit und einem sauberen, beständigen Abbrand. Erleben Sie Luxus, so rein wie die Schweizer Alpen und so authentisch wie der Nil.',
+    'promise.journey.title': 'Die Duftreise',
+    'promise.journey.desc': 'Begeben Sie sich auf eine olfaktorische Reise, auf der antike Nil-Gewürze auf frische Alpenbrisen treffen. Jeder Duft wird sorgfältig komponiert, um Erinnerungen zu wecken und Empfindungen zu inspirieren — eine Geschichte zweier Welten in einer einzigen Flamme.',
+    'promise.sustainable.title': 'Nachhaltiger Luxus',
+    'promise.sustainable.desc': 'Genießen Sie Luxus, der unseren Planeten respektiert. NILIUM widmet sich nachhaltiger Beschaffung, umweltbewusster Verpackung und ethischen Praktiken — denn wahrer Luxus ist verantwortungsvoller Luxus.',
   },
 
   fr: {
@@ -913,5 +931,14 @@ export const translations: Record<Language, Record<string, string>> = {
 
     'story.page.eyebrow': 'Notre Histoire',
     'story.page.title': 'Une Vie Entre les Mondes',
+
+    'promise.eyebrow': 'La Promesse NILIUM',
+    'promise.title': 'Façonné avec Intention',
+    'promise.purity.title': "L'Essence de la Pureté",
+    'promise.purity.desc': "Fabriquée à partir de cire de soja 100% naturelle et enrichie d'essences botaniques rares, chaque bougie NILIUM incarne un engagement envers une pureté immaculée et une combustion propre et durable. Découvrez un luxe aussi pur que les Alpes suisses et aussi authentique que le Nil.",
+    'promise.journey.title': 'Le Voyage Olfactif',
+    'promise.journey.desc': "Embarquez pour un voyage olfactif où les épices anciennes du Nil rencontrent les brises alpines. Chaque parfum est méticuleusement composé pour évoquer des souvenirs et inspirer des sensations — l'histoire de deux mondes dans une seule flamme.",
+    'promise.sustainable.title': 'Luxe Durable',
+    'promise.sustainable.desc': 'Offrez-vous un luxe qui respecte notre planète. NILIUM se consacre à un approvisionnement durable, un emballage éco-responsable et des pratiques éthiques — car le vrai luxe est un luxe responsable.',
   },
 };
