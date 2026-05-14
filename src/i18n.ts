@@ -279,6 +279,35 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.legal.cookies': 'Cookie Policy',
     'footer.legal.terms': 'Terms of Service',
     'footer.legal.impressum': 'Impressum',
+
+    'story.values.title': 'Our Values',
+    'story.values.nile': 'Nile',
+    'story.values.alps': 'Alps',
+    'story.values.soy.label': '100% Soy Wax',
+    'story.values.soy.sub': 'Natural & clean',
+    'story.values.handmade.label': 'Handmade',
+    'story.values.handmade.sub': 'In Switzerland',
+    'story.values.eco.label': 'Eco-Friendly',
+    'story.values.eco.sub': 'Sustainably packaged',
+
+    'howto.usage.sachets.title': 'Sachets',
+    'howto.usage.sachets.sub': 'For the wardrobe',
+    'howto.usage.giftsets.title': 'Gift Sets',
+    'howto.usage.giftsets.sub': 'Wrapped ritual',
+    'howto.usage.burntime.title': '40h Burn Time',
+    'howto.usage.burntime.sub': 'Per candle',
+
+    'shop.filter.all': 'All',
+    'shop.badge.bestseller': 'Bestseller',
+
+    'contact.label.email': 'Email',
+    'contact.label.location': 'Location',
+    'contact.label.web': 'Web',
+    'contact.payment': 'Payment Methods',
+
+    'newsletter.error.invalid': 'Please enter a valid email',
+    'newsletter.error.generic': 'Something went wrong. Please try again.',
+    'newsletter.error.network': 'Network error. Please try again.',
   },
 
   de: {
@@ -548,6 +577,35 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.legal.cookies': 'Cookie-Richtlinie',
     'footer.legal.terms': 'Nutzungsbedingungen',
     'footer.legal.impressum': 'Impressum',
+
+    'story.values.title': 'Unsere Werte',
+    'story.values.nile': 'Nil',
+    'story.values.alps': 'Alpen',
+    'story.values.soy.label': '100% Sojawachs',
+    'story.values.soy.sub': 'Natürlich & sauber',
+    'story.values.handmade.label': 'Handgefertigt',
+    'story.values.handmade.sub': 'In der Schweiz',
+    'story.values.eco.label': 'Umweltfreundlich',
+    'story.values.eco.sub': 'Nachhaltig verpackt',
+
+    'howto.usage.sachets.title': 'Sachets',
+    'howto.usage.sachets.sub': 'Für den Kleiderschrank',
+    'howto.usage.giftsets.title': 'Geschenksets',
+    'howto.usage.giftsets.sub': 'Verpacktes Ritual',
+    'howto.usage.burntime.title': '40h Brennzeit',
+    'howto.usage.burntime.sub': 'Pro Kerze',
+
+    'shop.filter.all': 'Alle',
+    'shop.badge.bestseller': 'Bestseller',
+
+    'contact.label.email': 'E-Mail',
+    'contact.label.location': 'Standort',
+    'contact.label.web': 'Web',
+    'contact.payment': 'Zahlungsmethoden',
+
+    'newsletter.error.invalid': 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+    'newsletter.error.generic': 'Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.',
+    'newsletter.error.network': 'Netzwerkfehler. Bitte versuchen Sie es erneut.',
   },
 
   fr: {
@@ -817,5 +875,34 @@ export const translations: Record<Language, Record<string, string>> = {
     'footer.legal.cookies': 'Politique des cookies',
     'footer.legal.terms': 'Conditions d\'utilisation',
     'footer.legal.impressum': 'Mentions légales',
+
+    'story.values.title': 'Nos Valeurs',
+    'story.values.nile': 'Nil',
+    'story.values.alps': 'Alpes',
+    'story.values.soy.label': '100% Cire de Soja',
+    'story.values.soy.sub': 'Naturel & pur',
+    'story.values.handmade.label': 'Fait Main',
+    'story.values.handmade.sub': 'En Suisse',
+    'story.values.eco.label': 'Écologique',
+    'story.values.eco.sub': 'Emballage durable',
+
+    'howto.usage.sachets.title': 'Sachets',
+    'howto.usage.sachets.sub': 'Pour l\'armoire',
+    'howto.usage.giftsets.title': 'Coffrets Cadeaux',
+    'howto.usage.giftsets.sub': 'Rituel emballé',
+    'howto.usage.burntime.title': '40h de combustion',
+    'howto.usage.burntime.sub': 'Par bougie',
+
+    'shop.filter.all': 'Tout',
+    'shop.badge.bestseller': 'Bestseller',
+
+    'contact.label.email': 'E-mail',
+    'contact.label.location': 'Lieu',
+    'contact.label.web': 'Web',
+    'contact.payment': 'Moyens de paiement',
+
+    'newsletter.error.invalid': 'Veuillez saisir une adresse e-mail valide.',
+    'newsletter.error.generic': 'Une erreur s\'est produite. Veuillez réessayer.',
+    'newsletter.error.network': 'Erreur réseau. Veuillez réessayer.',
   },
 };

@@ -50,6 +50,48 @@ function ImpressumEN() {
         user's own risk.
       </p>
 
+      <h2 className={h2}>Product Safety Notice</h2>
+      <p className={p}>
+        Our scented candles are consumer products subject to applicable safety regulations. All
+        candles carry the required safety labelling on their packaging. Please read and follow all
+        safety instructions before use:
+      </p>
+      <p className={p}>
+        Never leave a burning candle unattended. Keep away from children, pets, and flammable
+        materials. Burn on a heat-resistant surface, away from drafts. Trim the wick to 5 mm before
+        each use. Do not burn for more than 4 hours at a time. Stop use when 10 mm of wax remains.
+      </p>
+      <p className={p}>
+        Fragrance ingredients are listed on each product page and on the packaging. If you experience
+        an adverse reaction, discontinue use immediately and seek medical advice if necessary. For
+        further product safety information, please contact us at{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>.
+      </p>
+
+      <h2 className={h2}>Withdrawal Right and Returns</h2>
+      <p className={p}>
+        Consumers resident in Switzerland or the European Economic Area have the right to withdraw
+        from a distance contract within 14 days of receiving their order, without giving any reason.
+        To exercise this right, please notify us by email at{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>{' '}
+        within the 14-day period.
+      </p>
+      <p className={p}>
+        Returned items must be unused, in their original condition, and in original packaging.
+        Return shipping costs are borne by the customer unless the item is defective or incorrectly
+        delivered. Refunds are processed within 14 days of receiving the returned goods via the
+        original payment method.
+      </p>
+      <p className={p}>
+        For hygiene reasons, opened sachets and candles that have been burned are excluded from
+        the right of return unless they are defective. Full details are set out in our{' '}
+        <a href="/terms" className={a}>Terms of Service</a>.
+      </p>
+
       <h2 className={h2}>Copyright</h2>
       <p className={p}>
         The copyright and all other rights to content, images, photos, or other files on this
@@ -108,6 +150,53 @@ function ImpressumDE() {
         Verweise und Links auf Webseiten Dritter liegen ausserhalb unseres Verantwortungsbereichs.
         Es wird jegliche Verantwortung für solche Webseiten abgelehnt. Der Zugriff und die Nutzung
         solcher Webseiten erfolgen auf eigene Gefahr des Nutzers.
+      </p>
+
+      <h2 className={h2}>Produktsicherheitshinweis</h2>
+      <p className={p}>
+        Unsere Duftkerzen sind Verbraucherprodukte, die den anwendbaren Sicherheitsvorschriften
+        unterliegen. Alle Kerzen tragen die erforderlichen Sicherheitskennzeichnungen auf ihrer
+        Verpackung. Bitte lesen und befolgen Sie alle Sicherheitshinweise vor der Verwendung:
+      </p>
+      <p className={p}>
+        Brennende Kerzen niemals unbeaufsichtigt lassen. Von Kindern, Haustieren und brennbaren
+        Materialien fernhalten. Auf einer hitzebeständigen Unterlage, abseits von Zugluft,
+        aufstellen. Den Docht vor jeder Verwendung auf 5 mm kürzen. Nicht länger als 4 Stunden
+        am Stück brennen lassen. Nutzung einstellen, wenn noch 10 mm Wachs verbleiben.
+      </p>
+      <p className={p}>
+        Die Duftstoffinhaltsstoffe sind auf jeder Produktseite und auf der Verpackung aufgeführt.
+        Falls Sie eine unerwünschte Reaktion bemerken, verwenden Sie das Produkt sofort nicht mehr
+        und suchen Sie bei Bedarf ärztlichen Rat. Für weitere Produktsicherheitsinformationen
+        kontaktieren Sie uns bitte unter{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>.
+      </p>
+
+      <h2 className={h2}>Widerrufsrecht und Rückgaben</h2>
+      <p className={p}>
+        Verbraucher mit Wohnsitz in der Schweiz oder im Europäischen Wirtschaftsraum haben das
+        Recht, innerhalb von 14 Tagen nach Erhalt ihrer Bestellung ohne Angabe von Gründen von
+        einem Fernabsatzvertrag zurückzutreten. Um dieses Recht auszuüben, informieren Sie uns
+        bitte per E-Mail an{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>{' '}
+        innerhalb der 14-tägigen Frist.
+      </p>
+      <p className={p}>
+        Zurückgesandte Artikel müssen unbenutzt, in einwandfreiem Originalzustand und in der
+        Originalverpackung sein. Die Rücksendekosten gehen zu Lasten des Kunden, es sei denn,
+        der Artikel ist defekt oder falsch geliefert worden. Rückerstattungen werden innerhalb
+        von 14 Tagen nach Erhalt der zurückgesandten Ware über die ursprüngliche Zahlungsmethode
+        verarbeitet.
+      </p>
+      <p className={p}>
+        Aus hygienischen Gründen sind geöffnete Duftsäckchen und bereits gebrannte Kerzen vom
+        Rückgaberecht ausgeschlossen, sofern sie nicht defekt sind. Vollständige Details sind
+        in unseren{' '}
+        <a href="/terms" className={a}>Nutzungsbedingungen</a> aufgeführt.
       </p>
 
       <h2 className={h2}>Urheberrecht</h2>
@@ -169,6 +258,54 @@ function ImpressumFR() {
         Les références et les liens vers des sites web tiers échappent à notre domaine de
         responsabilité. Nous déclinons toute responsabilité pour ces sites web. L'accès et
         l'utilisation de ces sites web se font aux risques et périls de l'utilisateur.
+      </p>
+
+      <h2 className={h2}>Avis de sécurité produit</h2>
+      <p className={p}>
+        Nos bougies parfumées sont des produits de consommation soumis aux réglementations de
+        sécurité applicables. Toutes les bougies portent les mentions de sécurité requises sur
+        leur emballage. Veuillez lire et respecter toutes les consignes de sécurité avant
+        utilisation :
+      </p>
+      <p className={p}>
+        Ne jamais laisser une bougie allumée sans surveillance. Tenir hors de la portée des
+        enfants, des animaux et des matières inflammables. Placer sur une surface résistante à
+        la chaleur, à l'abri des courants d'air. Couper la mèche à 5 mm avant chaque utilisation.
+        Ne pas brûler plus de 4 heures consécutives. Cesser l'utilisation lorsqu'il reste 10 mm
+        de cire.
+      </p>
+      <p className={p}>
+        Les ingrédients odorants sont indiqués sur chaque page produit et sur l'emballage. En cas
+        de réaction indésirable, cessez immédiatement l'utilisation et consultez un médecin si
+        nécessaire. Pour plus d'informations sur la sécurité des produits, veuillez nous contacter
+        à l'adresse{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>.
+      </p>
+
+      <h2 className={h2}>Droit de rétractation et retours</h2>
+      <p className={p}>
+        Les consommateurs résidant en Suisse ou dans l'Espace économique européen ont le droit
+        de se rétracter d'un contrat à distance dans un délai de 14 jours suivant la réception
+        de leur commande, sans avoir à motiver leur décision. Pour exercer ce droit, veuillez
+        nous informer par e-mail à l'adresse{' '}
+        <a href="mailto:nilium.official@gmail.com" className={a}>
+          nilium.official@gmail.com
+        </a>{' '}
+        dans le délai de 14 jours.
+      </p>
+      <p className={p}>
+        Les articles retournés doivent être non utilisés, en état d'origine et dans leur
+        emballage d'origine. Les frais de retour sont à la charge du client, sauf si l'article
+        est défectueux ou livré incorrectement. Les remboursements sont traités dans les 14
+        jours suivant la réception des marchandises retournées, via le mode de paiement d'origine.
+      </p>
+      <p className={p}>
+        Pour des raisons d'hygiène, les sachets ouverts et les bougies ayant été allumées sont
+        exclus du droit de retour, sauf s'ils sont défectueux. Les détails complets figurent dans
+        nos{' '}
+        <a href="/terms" className={a}>Conditions d'utilisation</a>.
       </p>
 
       <h2 className={h2}>Droits d'auteur</h2>

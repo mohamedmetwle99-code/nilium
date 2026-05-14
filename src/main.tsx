@@ -10,6 +10,7 @@ import { JournalArticle } from './pages/JournalArticle';
 import { PrivacyPolicy } from './pages/PrivacyPolicy';
 import { CookiePolicy } from './pages/CookiePolicy';
 import { Impressum } from './pages/Impressum';
+import { TermsOfService } from './pages/TermsOfService';
 import { detectLanguage } from './i18n';
 
 const path = window.location.pathname;
@@ -32,6 +33,8 @@ if (path === '/success') {
   root.render(<StrictMode><CookiePolicy lang={lang} /></StrictMode>);
 } else if (path === '/impressum') {
   root.render(<StrictMode><Impressum lang={lang} /></StrictMode>);
+} else if (path === '/terms') {
+  root.render(<StrictMode><TermsOfService lang={lang} /></StrictMode>);
 } else if (path === '/' || path === '') {
   root.render(<StrictMode><App /></StrictMode>);
 } else {

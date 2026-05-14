@@ -39,9 +39,9 @@ export const ContactSection: React.FC<Props> = ({ lang }) => {
             className="lg:col-span-2 space-y-8"
           >
             {[
-              { icon: Mail, label: 'Email', value: t['contact.info.email'] },
-              { icon: MapPin, label: 'Location', value: t['contact.info.location'] },
-              { icon: Globe, label: 'Web', value: t['contact.info.web'] },
+              { icon: Mail, label: t['contact.label.email'], value: t['contact.info.email'] },
+              { icon: MapPin, label: t['contact.label.location'], value: t['contact.info.location'] },
+              { icon: Globe, label: t['contact.label.web'], value: t['contact.info.web'] },
             ].map((item, i) => {
               const Icon = item.icon;
               return (
@@ -59,7 +59,7 @@ export const ContactSection: React.FC<Props> = ({ lang }) => {
 
             {/* Payment methods */}
             <div className="pt-6 border-t border-cream-dark">
-              <p className="text-[10px] tracking-[0.2em] font-accent text-charcoal/30 uppercase mb-3">Payment Methods</p>
+              <p className="text-[10px] tracking-[0.2em] font-accent text-charcoal/30 uppercase mb-3">{t['contact.payment']}</p>
               <div className="flex flex-wrap gap-2">
                 {['PostFinance', 'TWINT', 'Visa', 'Mastercard', 'PayPal'].map((m) => (
                   <span key={m} className="text-[9px] font-accent tracking-wider text-charcoal/40 border border-cream-dark px-2.5 py-1 bg-white/50">{m}</span>

@@ -83,20 +83,20 @@ export const HowItWorksSection: React.FC<Props> = ({ lang }) => {
         <div className="grid grid-cols-3 gap-3 md:gap-5 mb-12">
           <UsageCard
             icon={<WardrobeIcon size={44} strokeWidth={1.3} />}
-            title={lang === 'de' ? 'Sachets' : 'Sachets'}
-            sub={lang === 'de' ? 'Für den Kleiderschrank' : 'For the wardrobe'}
+            title={t['howto.usage.sachets.title']}
+            sub={t['howto.usage.sachets.sub']}
             delay={0.2}
           />
           <UsageCard
             icon={<GiftBoxIcon size={44} strokeWidth={1.3} />}
-            title={lang === 'de' ? 'Geschenksets' : 'Gift Sets'}
-            sub={lang === 'de' ? 'Verpacktes Ritual' : 'Wrapped ritual'}
+            title={t['howto.usage.giftsets.title']}
+            sub={t['howto.usage.giftsets.sub']}
             delay={0.3}
           />
           <UsageCard
             icon={<ClockIcon size={44} strokeWidth={1.3} />}
-            title={lang === 'de' ? '40h Brennzeit' : '40h Burn Time'}
-            sub={lang === 'de' ? 'Pro Kerze' : 'Per candle'}
+            title={t['howto.usage.burntime.title']}
+            sub={t['howto.usage.burntime.sub']}
             delay={0.4}
           />
         </div>

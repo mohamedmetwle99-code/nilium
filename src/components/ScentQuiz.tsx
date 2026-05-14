@@ -107,9 +107,9 @@ export const ScentQuiz: React.FC<Props> = ({ lang }) => {
     diff > 1 ? 'nile' : diff < -1 ? 'alpine' : 'both';
 
   const resultTitle =
-    result === 'nile'   ? 'Nile Secrets' :
-    result === 'alpine' ? 'Alpine Serenity' :
-                          'Nile Secrets & Alpine Serenity';
+    result === 'nile'   ? t['products.nile.name'] :
+    result === 'alpine' ? t['products.alpine.name'] :
+                          `${t['products.nile.name']} & ${t['products.alpine.name']}`;
 
   const shopCta = result === 'both' ? t['quiz.result.shop_plural'] : t['quiz.result.shop'];
 

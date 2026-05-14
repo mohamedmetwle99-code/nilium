@@ -77,7 +77,7 @@ const ProductCard: React.FC<{
         {/* Bestseller badge */}
         {product.id === 'nile' && (
           <div className="absolute top-3 right-3 bg-solar text-nile-dark text-[9px] font-accent font-semibold tracking-wider uppercase px-3 py-1">
-            Bestseller
+            {t['shop.badge.bestseller']}
           </div>
         )}
       </div>
@@ -168,7 +168,7 @@ export const ShopSection: React.FC<Props> = ({ lang, formatPrice, onAddToCart })
   const [filter, setFilter] = useState<string>('all');
 
   const collections = [
-    { key: 'all', label: 'All' },
+    { key: 'all', label: t['shop.filter.all'] },
     { key: 'nile', label: t['collections.nile'] },
     { key: 'alpine', label: t['collections.alpine'] },
   ];

@@ -19,7 +19,7 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
-      showToast('Please enter a valid email');
+      showToast(t['newsletter.error.invalid']);
       return;
     }
     setSubmitting(true);
@@ -36,10 +36,10 @@ export const NewsletterSection: React.FC<Props> = ({ lang }) => {
         setEmail('');
         setShowSuccess(true);
       } else {
-        showToast(data.error || 'Something went wrong. Please try again.');
+        showToast(data.error || t['newsletter.error.generic']);
       }
     } catch {
-      showToast('Network error. Please try again.');
+      showToast(t['newsletter.error.network']);
     } finally {
       setSubmitting(false);
     }

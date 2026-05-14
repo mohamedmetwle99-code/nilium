@@ -100,7 +100,7 @@ export const StorySection: React.FC<Props> = ({ lang }) => {
           <div className="flex flex-col items-center gap-2">
             <LotusIcon size={48} strokeWidth={1.3} />
             <span className="text-[9px] tracking-[0.3em] uppercase font-accent text-charcoal/40">
-              {lang === 'de' ? 'Nil' : 'Nile'}
+              {t['story.values.nile']}
             </span>
           </div>
           <div className="w-12 md:w-24 h-px bg-solar/30" />
@@ -109,7 +109,7 @@ export const StorySection: React.FC<Props> = ({ lang }) => {
           <div className="flex flex-col items-center gap-2">
             <MountainIcon size={48} strokeWidth={1.3} />
             <span className="text-[9px] tracking-[0.3em] uppercase font-accent text-charcoal/40">
-              {lang === 'de' ? 'Alpen' : 'Alps'}
+              {t['story.values.alps']}
             </span>
           </div>
         </motion.div>
@@ -146,25 +146,25 @@ export const StorySection: React.FC<Props> = ({ lang }) => {
         {/* Brand Values — Product Features Icons */}
         <div className="border-t border-cream-dark pt-12 mb-14">
           <h3 className="text-center text-[10px] tracking-[0.4em] uppercase font-accent text-charcoal/40 mb-10">
-            — {lang === 'de' ? 'Unsere Werte' : 'Our Values'} —
+            — {t['story.values.title']} —
           </h3>
           <div className="grid grid-cols-3 gap-6 md:gap-12 max-w-3xl mx-auto">
             <ValueCard
               icon={<SoyBeanIcon size={42} strokeWidth={1.3} />}
-              label={lang === 'de' ? '100% Sojawachs' : '100% Soy Wax'}
-              sub={lang === 'de' ? 'Natürlich & sauber' : 'Natural & clean'}
+              label={t['story.values.soy.label']}
+              sub={t['story.values.soy.sub']}
               delay={0.5}
             />
             <ValueCard
               icon={<HandmadeIcon size={42} strokeWidth={1.3} />}
-              label={lang === 'de' ? 'Handgefertigt' : 'Handmade'}
-              sub={lang === 'de' ? 'In der Schweiz' : 'In Switzerland'}
+              label={t['story.values.handmade.label']}
+              sub={t['story.values.handmade.sub']}
               delay={0.6}
             />
             <ValueCard
               icon={<EcoIcon size={42} strokeWidth={1.3} />}
-              label={lang === 'de' ? 'Umweltfreundlich' : 'Eco-Friendly'}
-              sub={lang === 'de' ? 'Nachhaltig verpackt' : 'Sustainably packaged'}
+              label={t['story.values.eco.label']}
+              sub={t['story.values.eco.sub']}
               delay={0.7}
             />
           </div>
