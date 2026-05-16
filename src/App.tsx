@@ -7,8 +7,6 @@ import { HeroSection } from './components/HeroSection';
 import { ShopSection } from './components/ShopSection';
 import { ScentQuiz } from './components/ScentQuiz';
 import { StorySection } from './components/StorySection';
-import { PackagingSection } from './components/PackagingSection';
-import { HowItWorksSection } from './components/HowItWorksSection';
 import { NewsletterSection } from './components/NewsletterSection';
 import { ContactSection } from './components/ContactSection';
 import { Footer } from './components/Footer';
@@ -58,9 +56,7 @@ const AppInner: React.FC = () => {
       <ShopSection lang={lang} formatPrice={formatPrice} onAddToCart={handleAddToCart} />
       <ScentQuiz lang={lang} />
       <StorySection lang={lang} />
-      <PackagingSection lang={lang} />
       <PromiseSection lang={lang} />
-      <HowItWorksSection lang={lang} />
       <NewsletterSection lang={lang} />
       <ContactSection lang={lang} />
       <Footer lang={lang} onLegalOpen={setLegalModal} />
