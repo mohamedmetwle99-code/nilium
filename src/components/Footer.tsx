@@ -33,8 +33,8 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
   ];
 
   const socials = [
-    { icon: '/icons/social-instagram.png', label: 'Instagram', href: 'https://instagram.com/nilium.ch' },
-    { icon: '/icons/social-tiktok.png',    label: 'TikTok',    href: 'https://tiktok.com/@niliumofficial' },
+    { icon: '/icons/ig-gold.png', label: 'Instagram', href: 'https://instagram.com/nilium.ch' },
+    { icon: '/icons/tt-gold.png', label: 'TikTok',    href: 'https://tiktok.com/@niliumofficial' },
   ];
 
   return (
