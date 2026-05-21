@@ -6,9 +6,9 @@ import { translations } from '../i18n';
 interface Props { lang: Language; }
 
 const columns = [
-  { icon: '/icons/icon-purity.jpg', titleKey: 'promise.purity.title', descKey: 'promise.purity.desc' },
-  { icon: '/icons/icon-scent-journey.jpg', titleKey: 'promise.journey.title', descKey: 'promise.journey.desc' },
-  { icon: '/icons/icon-sustainable.jpg', titleKey: 'promise.sustainable.title', descKey: 'promise.sustainable.desc' },
+  { icon: '/icons/icon-purity.png', titleKey: 'promise.purity.title', descKey: 'promise.purity.desc' },
+  { icon: '/icons/icon-scent-journey.png', titleKey: 'promise.journey.title', descKey: 'promise.journey.desc' },
+  { icon: '/icons/icon-sustainable.png', titleKey: 'promise.sustainable.title', descKey: 'promise.sustainable.desc' },
 ];
 
 export const PromiseSection: React.FC<Props> = ({ lang }) => {
@@ -47,7 +47,7 @@ export const PromiseSection: React.FC<Props> = ({ lang }) => {
               <img
                 src={col.icon}
                 alt={t[col.titleKey]}
-                className="w-24 h-24 object-contain mx-auto mb-6"
+                className="w-28 h-28 object-contain mx-auto mb-6"
                 loading="lazy"
               />
               <h3 className="font-display text-xl text-nile-dark mb-4">
