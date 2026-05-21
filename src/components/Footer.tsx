@@ -33,8 +33,8 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
   ];
 
   const socials = [
-    { abbr: 'IG', label: 'Instagram', href: 'https://instagram.com/nilium.ch' },
-    { abbr: 'TT', label: 'TikTok',    href: 'https://tiktok.com/@niliumofficial' },
+    { icon: '/icons/social-instagram.png', label: 'Instagram', href: 'https://instagram.com/nilium.ch' },
+    { icon: '/icons/social-tiktok.png',    label: 'TikTok',    href: 'https://tiktok.com/@niliumofficial' },
   ];
 
   return (
@@ -53,17 +53,16 @@ export const Footer: React.FC<Props> = ({ lang, onLegalOpen }) => {
             <p className="text-white/50 text-sm font-body leading-relaxed mb-5">
               {t['footer.tagline']}
             </p>
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-4">
               {socials.map(s => (
                 <a
-                  key={s.abbr}
+                  key={s.label}
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`NILIUM on ${s.label}`}
-                  className="w-11 h-11 rounded-full border border-white/20 flex items-center justify-center text-nilium-gold hover:bg-nilium-gold hover:border-nilium-gold hover:text-nilium-navy transition-all duration-200 text-[9px] font-accent font-bold"
+                  className="block hover:opacity-80 hover:scale-110 transition-all duration-300"
                 >
-                  {s.abbr}
+                  <img src={s.icon} alt={s.label} className="w-8 h-8 object-contain" />
                 </a>
               ))}
             </div>
